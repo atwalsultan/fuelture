@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 
 const sales = require("./routes/api/sales")
+const articles = require('./routes/rss/articles')
 
 const app = express();
 
@@ -22,6 +23,7 @@ mongoose.connect(process.env.MONGO_URI, {
 // Allow the request to be received as json
 app.use(express.json());
 app.use('/api/sales', sales);
+app.use('/rss/articles', articles)
 
 const port = process.env.PORT || 5000;
   

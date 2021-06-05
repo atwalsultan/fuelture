@@ -1,28 +1,36 @@
 import {useState, useEffect} from 'react';
+import {Markup} from 'interweave'
 
 const Articles = () => {
     const [articles, setArticles] = useState([]);
 
-    const fetchNews = async () => {
-        const apiKey = 'b5fb0b650652426cba5cebef44f440f5'
-        const apiCall = `https://newsapi.org/v2/everything?qInTitle="electric%20vehicle"&from=2021-05-1&language=en&sortBy=popularity&apiKey=${apiKey}`
-        console.log("Fetching news...")
-        let response = await fetch(apiCall)
-        let data = await response.json()
+    const fetchArticles = async () => {
+        const response = await fetch('http://localhost:5000/rss/articles')
+        const fetchedArticles = await response.json()
 
-        setArticles(data['articles']);
-    
+        console.log(fetchedArticles)
+        setArticles(fetchedArticles)
     }
 
     useEffect(() => {
-        fetchNews();
+        fetchArticles();
     }, [])
 
     return (
         <div>
+            <p>Articles Component</p>
             <ul>
                 {
-                    articles.map((article, index) => <li key={index}>{article.title}</li>)
+                    articles.map((article, index) => {
+                        return (
+                            <li key={index}>
+                                <img width="300" height="auto" src={article.img} alt="" />
+                                <a href={article.link}><h4>{article.title}</h4></a>
+                                <Markup content={article.content} />
+                                <p>Published on: {article.pubDate}</p>
+                            </li>
+                        )
+                    })
                 }
             </ul>
         </div>
