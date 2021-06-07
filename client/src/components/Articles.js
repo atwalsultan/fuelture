@@ -4,16 +4,15 @@ import {Markup} from 'interweave'
 const Articles = () => {
     const [articles, setArticles] = useState([]);
 
-    const fetchArticles = async () => {
-        const response = await fetch('http://localhost:5000/rss/articles')
+    const getArticles = async () => {
+        const response = await fetch('/rss/articles')
         const fetchedArticles = await response.json()
 
-        console.log(fetchedArticles)
         setArticles(fetchedArticles)
     }
 
     useEffect(() => {
-        fetchArticles();
+        getArticles();
     }, [])
 
     return (
