@@ -8,6 +8,7 @@ const Home = () => {
         const url = "/api/sales"
         const res = await fetch(url);
         const data = await res.json();
+        
         setSalesFigures(data);
     };
 
