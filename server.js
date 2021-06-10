@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const sales = require("./routes/api/sales")
 const articles = require('./routes/rss/articles')
 const specs = require("./routes/api/specs")
+const incentives = require("./routes/api/incentives")
 
 const app = express();
 
@@ -26,6 +27,7 @@ app.use(express.json());
 app.use('/api/sales', sales);
 app.use('/rss/articles', articles)
 app.use('/api/specs', specs)
+app.use('/api/incentives', incentives)
 
 const port = process.env.PORT || 5000;
   
