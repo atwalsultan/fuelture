@@ -14,7 +14,7 @@ const Tools = () => {
     const response = await fetch("/api/prices");
     const fetchedPrices = await response.json();
 
-    setSpecs(fetchedPrices);
+    setPrices(fetchedPrices);
   };
 
   useEffect(() => {
