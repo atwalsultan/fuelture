@@ -1,24 +1,28 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from "react";
 
 const Tools = () => {
-    const [specs, setSpecs] = useState([]);
+  const [specs, setSpecs] = useState([]);
+  const [prices, setPrices] = useState([]);
 
-    const getSpecs = async () => {
-        const response = await fetch('/api/specs')
-        const fetchedSpecs = await response.json()
+  const getSpecs = async () => {
+    const response = await fetch("/api/specs");
+    const fetchedSpecs = await response.json();
 
-        setSpecs(fetchedSpecs)
-    }
+    setSpecs(fetchedSpecs);
+  };
+  const getPrices = async () => {
+    const response = await fetch("/api/prices");
+    const fetchedPrices = await response.json();
 
-    useEffect(() => {
-        getSpecs();
-    }, [])
+    setPrices(fetchedPrices);
+  };
 
-    return (
-        <div>
-            Tools Component
-        </div>
-    )
-}
+  useEffect(() => {
+    getSpecs();
+    getPrices();
+  }, []);
 
-export default Tools
+  return <div>Tools Component</div>;
+};
+
+export default Tools;
