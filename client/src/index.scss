@@ -1,0 +1,58 @@
+// Variables
+// Site Header
+$site_header_padding: 16px;
+$site_header_links_gap: 32px;
+$site_header_font_size: 23px;
+$site_header_background_color: white;
+
+// Page Content
+$page_margin: 142px;
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    div#root {
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        header.site-header {
+            padding: $site_header_padding $page_margin;
+            font-size: $site_header_font_size;
+
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: center;
+
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: $site_header_background_color;
+
+            // Temporary
+            border-bottom: 1px solid lightgray;
+
+            ul {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-between;
+                align-items: center;
+                gap: $site_header_links_gap;
+            }
+        }
+    }
+}
