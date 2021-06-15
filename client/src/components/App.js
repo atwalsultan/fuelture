@@ -3,11 +3,14 @@ import Home from "./Home";
 import Articles from "./Articles";
 import Tools from "./Tools";
 import About from "./About";
+import Header from "./Header";
 import Footer from "./Footer";
 
 function App() {
 	return (
 		<Router>
+			<Header></Header>
+			
 			<Route path="/" exact component={Home}></Route>
 			<Route path="/articles" component={Articles}></Route>
 			<Route path="/tools" component={Tools}></Route>
