@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 // Variables
 // Site Header
 $site_header_padding: 16px;
@@ -9,50 +10,51 @@ $site_header_background_color: white;
 $page_margin: 142px;
 
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-    div#root {
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        ul {
-            list-style-type: none;
-        }
-
-        header.site-header {
-            padding: $site_header_padding $page_margin;
-            font-size: $site_header_font_size;
-
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: space-between;
-            align-items: center;
-
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background-color: $site_header_background_color;
-
-            // Temporary
-            border-bottom: 1px solid lightgray;
-
-            ul {
-                display: flex;
-                flex-flow: row nowrap;
-                justify-content: space-between;
-                align-items: center;
-                gap: $site_header_links_gap;
-            }
-        }
+  font-family: "Ubuntu", sans-serif;
+  div#root {
+    img {
+      max-width: 100%;
+      height: auto;
     }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    header.site-header {
+      padding: $site_header_padding $page_margin;
+      font-size: $site_header_font_size;
+
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: $site_header_background_color;
+
+      // Temporary
+      border-bottom: 1px solid lightgray;
+
+      ul {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: $site_header_links_gap;
+      }
+    }
+  }
 }
