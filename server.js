@@ -6,6 +6,7 @@ const articles = require("./routes/rss/articles");
 const specs = require("./routes/api/specs");
 const incentives = require("./routes/api/incentives");
 const prices = require("./routes/api/prices");
+const teamMembers = require("./routes/api/members");
 
 const app = express();
 
@@ -31,6 +32,7 @@ app.use("/rss/articles", articles);
 app.use("/api/specs", specs);
 app.use("/api/incentives", incentives);
 app.use("/api/prices", prices);
+app.use("/api/team-members", teamMembers);
 
 const port = process.env.PORT || 5000;
 
