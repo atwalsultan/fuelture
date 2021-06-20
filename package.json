@@ -28,6 +28,7 @@
     "express": "^4.17.1",
     "interweave": "^12.7.2",
     "mongoose": "^5.12.12",
+    "react-icons": "^4.2.0",
     "rss-parser": "^3.12.0"
   },
   "devDependencies": {

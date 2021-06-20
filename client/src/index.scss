@@ -101,6 +101,8 @@ body {
 						.team-member {
 							flex-grow: 1;
 							flex-basis: 25%;
+							display: flex;
+							flex-flow: column nowrap;
 
 							@media screen and (max-width: $breakpoint) {
 								flex-basis: 100%;
@@ -111,16 +113,20 @@ body {
 								margin-bottom: $team_member_image_margin_bottom;
 							}
 
-							p.team-member-name {
-								margin-bottom: $team_member_name_margin_bottom;
-								font-size: $body_text_heading_font_size;
-								font-weight: 500;
-							}
-
-							p.team-member-role {
-								margin-bottom: $team_member_role_margin_bottom;
-								font-size: $body_text_heading_font_size;
-								font-weight: 400;
+							div.member-name-role {
+								flex-grow: 1;
+								
+								p.team-member-name {
+									margin-bottom: $team_member_name_margin_bottom;
+									font-size: $body_text_heading_font_size;
+									font-weight: 500;
+								}
+	
+								p.team-member-role {
+									margin-bottom: $team_member_role_margin_bottom;
+									font-size: $body_text_heading_font_size;
+									font-weight: 400;
+								}
 							}
 						}
 					}
