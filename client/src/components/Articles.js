@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import {Markup} from 'interweave'
+import Article from './Article';
 
 const Articles = () => {
     const [articles, setArticles] = useState([]);
@@ -16,18 +16,12 @@ const Articles = () => {
     }, [])
 
     return (
-        <div>
-            <p>Articles Component</p>
-            <ul>
+        <div className="page-content">
+            <ul id="articles">
                 {
                     articles.map((article, index) => {
                         return (
-                            <li key={index}>
-                                <img width="300" height="auto" src={article.img} alt="" />
-                                <a href={article.link}><h4>{article.title}</h4></a>
-                                <Markup content={article.content} />
-                                <p>Published on: {article.pubDate}</p>
-                            </li>
+                            <Article key={index} article={article}/>
                         )
                     })
                 }
