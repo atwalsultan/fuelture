@@ -67,17 +67,44 @@ body {
 		.page-content {
 			margin: $page_margin_vertical $page_margin_horizontal;
 
+			#articles {
+				// Article page variables
+				$articles_row_gap: 3.5rem;
+				$articles_column_gap: 2rem;
+
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				column-gap: $articles_column_gap;
+				row-gap: $articles_row_gap;
+
+				@media screen and (max-width: $breakpoint) {
+					grid-template-columns: repeat(1, 1fr);
+				}
+
+				.article-list-item {
+					display: flex;
+					flex-flow: column nowrap;
+					justify-content: center;
+					gap: .5rem;
+
+					img {
+						width: 100%;
+						height: auto;
+					}
+				}
+			}
+
 			section {
 				&#teamMembers {
 					// About Page Variables
-					text-align: center;
 					$team_members_gap: 56px;
 					$team_heading_margin_bottom: 32px;
 					$team_intro_margin_bottom: 72px;
 					$team_member_image_margin_bottom: 24px;
 					$team_member_name_margin_bottom: 8px;
 					$team_member_role_margin_bottom: 8px;
-
+					
+					text-align: center;
 					.section-heading {
 						text-align: center;
 						text-transform: capitalize;

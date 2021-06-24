@@ -6,12 +6,27 @@ router.get('/', (req, res) => {
     const fetchArticles = async () => {
         const Parser = require('rss-parser')
         const parser = new Parser()
+
         let items = []
+        let autoEvolutionImages = [];
 
         const autoblogRaw = await parser.parseURL('https://www.autoblog.com/category/green-auto-news/rss.xml')
         const autoevolutionRaw = await parser.parseURL('https://www.autoevolution.com/rss/backend-green.xml')
         const insideevsRaw = await parser.parseURL('https://insideevs.com/rss/articles/all/')
 
+        // For images from autoevolution
+        const fetch = require('node-fetch');
+        let response = await fetch('https://www.autoevolution.com/rss/backend-green.xml');
+        let textString = await response.text();
+        let parseString = require('xml2js').parseString;
+        parseString(textString, function (err, result) {
+            let articles = (result.rss.channel[0].item);
+            articles.forEach((article, index) => {
+                autoEvolutionImages.push(article["media:content"][0]["$"]["url"]);
+            });
+        });
+
+        // Autoblog
         autoblogRaw.items.forEach(item => {
             let imgURL = item.content.split('<img src="').pop().split('"')[0];
 
@@ -19,29 +34,29 @@ router.get('/', (req, res) => {
                 title: item.title,
                 img: imgURL,
                 content: item.contentSnippet,
-                pubDate: item.pubDate,
+                pubDate: `${item.pubDate.split("2021")[0]}2021`,
                 link: item.link,
 
             }
 
-            items.push(obj)
+            items.push(obj);
         })
 
-        autoevolutionRaw.items.forEach(item => {
-            let imgURL = item["content:encoded"].split('<img src="').pop().split('"')[0];
-                        
+        // Autoevolution
+        autoevolutionRaw.items.forEach((item, index) => {
+
             let obj = {
                 title: item.title,
-                img: imgURL,
+                img: autoEvolutionImages[index],
                 content: item.contentSnippet,
-                pubDate: item.pubDate,
+                pubDate: `${item.pubDate.split("2021")[0]}2021`,
                 link: item.link,
-
             }
 
-            items.push(obj)
+            items.push(obj);
         })
 
+        // InsideEVs
         insideevsRaw.items.forEach(item => {
             let imgURL = item["enclosure"]["url"].split('<img src="').pop().split('"')[0];
 
@@ -49,12 +64,12 @@ router.get('/', (req, res) => {
                 title: item.title,
                 img: imgURL,
                 content: item.contentSnippet,
-                pubDate: item.pubDate,
+                pubDate: `${item.pubDate.split("2021")[0]}2021`,
                 link: item.link,
 
             }
 
-            items.push(obj)
+            items.push(obj);
         })
 
         res.status(200).send(items)
