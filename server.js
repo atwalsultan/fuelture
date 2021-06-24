@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 
 const sales = require("./routes/api/sales");
-const articles = require("./routes/rss/articles");
+const news = require("./routes/rss/news");
 const specs = require("./routes/api/specs");
 const incentives = require("./routes/api/incentives");
 const prices = require("./routes/api/prices");
@@ -28,7 +28,7 @@ mongoose
 // Allow the request to be received as json
 app.use(express.json());
 app.use("/api/sales", sales);
-app.use("/rss/articles", articles);
+app.use("/rss/news", news);
 app.use("/api/specs", specs);
 app.use("/api/incentives", incentives);
 app.use("/api/prices", prices);

@@ -4,7 +4,7 @@ const TeamMember = ({member}) => {
     return (
         <div className="team-member">
             <div>
-                <img src="https://picsum.photos/150" alt={member.Name} className="team-member-image" />
+                <img src={`https://picsum.photos/150?random=${Math.floor(Math.random() * 50)}`} alt={member.Name} className="team-member-image" />
             </div>
 
             <div className="member-name-role">
@@ -21,4 +21,4 @@ const TeamMember = ({member}) => {
     )
 }
 
-export default TeamMember
+export default TeamMember;

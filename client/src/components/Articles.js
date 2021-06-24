@@ -5,7 +5,7 @@ const Articles = () => {
     const [articles, setArticles] = useState([]);
 
     const getArticles = async () => {
-        const response = await fetch('/rss/articles')
+        const response = await fetch('/rss/news')
         const fetchedArticles = await response.json()
 
         setArticles(fetchedArticles)
