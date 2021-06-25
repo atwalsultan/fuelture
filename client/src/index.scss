@@ -65,7 +65,7 @@ body {
 			}
 		}
 
-		div.home-banner {
+		div.home-banner, div.tools-banner {
 			// Home banner variables
 			$home_banner_padding: 10.5rem $page_margin_horizontal;
 			$home_banner_heading_font_size: 2.488rem;
@@ -105,6 +105,10 @@ body {
 				text-transform: capitalize;
 				cursor: pointer;
 			}
+		}
+
+		div.tools-banner {
+			align-items: flex-end;
 		}
 
 		.page-content {
@@ -263,6 +267,30 @@ body {
 					}
 				}
 
+				&#calculateCost, &#findEv {
+					margin-top: 120px;
+					margin-bottom: 64px;
+					display: flex;
+					flex-flow: column nowrap;
+					gap: 32px;
+					text-align: center;
+
+					h2 {
+						text-transform: capitalize;
+						font-size: 33px;
+						font-weight: 500;
+					}
+
+					div {
+						height: 80vh;
+						background-color: lightgray;
+					}
+				}
+
+				&#findEv {
+					margin-top: 64px;
+				}
+
 				&#teamMembers {
 					// About Page Variables
 					$team_members_gap: 56px;
@@ -321,6 +349,18 @@ body {
 									margin-bottom: $team_member_role_margin_bottom;
 									font-size: $body_text_heading_font_size;
 									font-weight: 400;
+								}
+							}
+
+							div.member-social-profile {
+								display: flex;
+								flex-flow: row nowrap;
+								justify-content: center;
+								align-items: center;
+								gap: 1rem;
+
+								svg {
+									font-size: 2rem;
 								}
 							}
 						}
