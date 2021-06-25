@@ -1,4 +1,12 @@
 import { useState, useEffect } from "react"
+import ElectricVehicleIntro from "./ElectricVehicleIntro"
+import EvMarket from "./EvMarket"
+import HomeBanner from "./HomeBanner"
+import TypesOfEvs from "./TypesOfEvs"
+import EvIncentives from "./EvIncentives"
+import EvTimeline from "./EvTimeline"
+import ReadEvNews from "./ReadEvNews"
+import FindAnEv from "./FindAnEv"
 
 const Home = () => {
 
@@ -28,7 +36,16 @@ const Home = () => {
 
     return (
         <div>
-            <p>Home Component</p>
+            <HomeBanner></HomeBanner>
+            <div className="page-content">
+                <ElectricVehicleIntro></ElectricVehicleIntro>
+                <TypesOfEvs></TypesOfEvs>
+                <EvMarket></EvMarket>
+                <EvIncentives></EvIncentives>
+                <FindAnEv></FindAnEv>
+                <EvTimeline></EvTimeline>
+                <ReadEvNews></ReadEvNews>
+            </div>
         </div>
     )
 }
