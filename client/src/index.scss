@@ -4,7 +4,7 @@
 $breakpoint: 950px;
 
 // Site Header
-$site_header_padding: 16px;
+$site_header_padding_vertical: 16px;
 $site_header_links_gap: 32px;
 $site_header_font_size: 23px;
 $site_header_background_color: white;
@@ -15,6 +15,7 @@ $page_margin_vertical: 56px;
 $section_heading_font_size: 2.074rem;
 $body_text_heading_font_size: 1.44rem;
 $large_body_text_font-size: 1.44rem;
+
 
 * {
 	padding: 0;
@@ -39,7 +40,7 @@ body {
 		}
 
 		header.site-header {
-			padding: $site_header_padding $page_margin_horizontal;
+			padding: $site_header_padding_vertical $page_margin_horizontal;
 			font-size: $site_header_font_size;
 
 			display: flex;
@@ -64,8 +65,50 @@ body {
 			}
 		}
 
+		div.home-banner {
+			// Home banner variables
+			$home_banner_padding: 10.5rem $page_margin_horizontal;
+			$home_banner_heading_font_size: 2.488rem;
+			$home_banner_heading_font_weight: 500;
+			$home_banner_paragraph_font_size: 1.75rem;
+			$home_banner_gap: 1.5rem;
+
+
+			background-color: lightgray;
+			min-height: 10vh;
+			padding: $home_banner_padding;
+			display: flex;
+			flex-flow: column nowrap;
+			align-items: flex-start;
+			gap: $home_banner_gap;
+
+			h2 {
+				font-size: $home_banner_heading_font_size;
+				font-weight: $home_banner_heading_font_weight;
+				max-width: 45%;
+			}
+
+			p {
+				font-size: $home_banner_paragraph_font_size;
+				color: rgb(105, 105, 105);
+				max-width: 45%;
+			}
+
+			button {
+				margin-top: 32px;
+				width: 200px;
+				height: 50px;
+				border-radius: 4px;
+				font-size: 19px;
+				font-family: inherit;
+				border: none;
+				text-transform: capitalize;
+				cursor: pointer;
+			}
+		}
+
 		.page-content {
-			margin: $page_margin_vertical $page_margin_horizontal;
+			padding: $page_margin_vertical $page_margin_horizontal;
 
 			#articles {
 				// Article page variables
@@ -94,7 +137,132 @@ body {
 				}
 			}
 
+			#readEvNews {
+				margin-top: 56px;
+				display: flex;
+				flex-flow: row nowrap;
+				align-items: center;
+				justify-content: center;
+
+				button {
+					margin-top: 32px;
+					width: 200px;
+					height: 50px;
+					border-radius: 4px;
+					font-size: 16px;
+					font-family: inherit;
+					border: none;
+					margin-bottom: 28px;
+					text-transform: capitalize;
+					cursor: pointer;
+				}
+			}
+
 			section {
+				&#evIntro {
+					text-align: center;
+					display: flex;
+					flex-flow: column nowrap;
+					gap: 32px;
+
+					h2 {
+						font-size: 33px;
+						font-weight: 500;
+						text-transform: capitalize;
+					}
+
+					p {
+						font-size: 23px;
+						font-weight: 400;
+					}
+				}
+
+				&#typesOfEvs {
+					display: flex;
+					flex-flow: column nowrap;
+					gap: 32px;
+					margin-top: 120px;
+					text-align: center;
+
+					h2 {
+						text-transform: capitalize;
+						font-size: 33px;
+						font-weight: 500;
+					}
+
+					ul.ev-types {
+						display: flex;
+						flex-flow: row nowrap;
+						gap: 2rem;
+
+						li {
+							display: flex;
+							flex-flow: column nowrap;
+							gap: 32px;
+							flex-basis: 30%;
+
+							div	{
+								height: 15vw;
+								background-color: lightgray;
+							}
+						}
+					}	
+				}
+
+				&#evMarket, &#evIncentives, &#evTimeline {
+					display: flex;
+					flex-flow: column nowrap;
+					gap: 32px;
+					margin-top: 120px;
+					text-align: center;
+
+					h2 {
+						text-transform: capitalize;
+						font-size: 33px;
+						font-weight: 500;
+					}
+
+					div {
+						height: 70vh;
+						background-color: lightgray;
+					}
+				}
+
+				&#findAnEv {
+					margin-top: 56px;
+					display: flex;
+					flex-flow: row nowrap;
+					align-items: center;
+					justify-content: space-between;
+
+					div {
+						display: flex;
+						flex-flow: column nowrap;
+						gap: 32px;
+
+						h3 {
+							font-size: 28px;
+							font-weight: 500;
+
+						}
+
+						p {
+							font-size: 23px;
+						}
+					}
+
+					button {
+						width: 200px;
+						height: 50px;
+						border-radius: 4px;
+						font-size: 16px;
+						font-family: inherit;
+						border: none;
+						text-transform: capitalize;
+						cursor: pointer;
+					}
+				}
+
 				&#teamMembers {
 					// About Page Variables
 					$team_members_gap: 56px;
