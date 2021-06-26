@@ -5,39 +5,44 @@ import CalculateCost from "./CalculateCost";
 import FindEv from "./FindEv";
 
 const Tools = () => {
-	const [specs, setSpecs] = useState([]);
-	const [prices, setPrices] = useState([]);
+  const [specs, setSpecs] = useState([]);
+  const [prices, setPrices] = useState([]);
 
-	const getSpecs = async () => {
-		const response = await fetch("/api/specs");
-		const fetchedSpecs = await response.json();
+  useEffect(() => {
+    let unmounted = false;
+    const getSpecs = async () => {
+      const response = await fetch("/api/specs");
+      const fetchedSpecs = await response.json();
+      if (unmounted) {
+        setSpecs(fetchedSpecs);
+      }
+    };
+    const getPrices = async () => {
+      const response = await fetch("/api/prices");
+      const fetchedPrices = await response.json();
+      if (unmounted) {
+        setPrices(fetchedPrices);
+      }
+    };
+    getSpecs();
+    getPrices();
+    return () => {
+      unmounted = true;
+    };
+  }, []);
 
-		setSpecs(fetchedSpecs);
-	};
-	const getPrices = async () => {
-		const response = await fetch("/api/prices");
-		const fetchedPrices = await response.json();
-
-		setPrices(fetchedPrices);
-	};
-
-	useEffect(() => {
-		getSpecs();
-		getPrices();
-	}, []);
-
-	return (
-		<div>
-			<ToolsBanner1></ToolsBanner1>
-			<div className="page-content">
-				<CalculateCost></CalculateCost>
-			</div>
-			<ToolsBanner2></ToolsBanner2>
-			<div className="page-content">
-				<FindEv></FindEv>
-			</div>
-		</div>
-	);
+  return (
+    <div>
+      <ToolsBanner1></ToolsBanner1>
+      <div className="page-content">
+        <CalculateCost></CalculateCost>
+      </div>
+      <ToolsBanner2></ToolsBanner2>
+      <div className="page-content">
+        <FindEv></FindEv>
+      </div>
+    </div>
+  );
 };
 
 export default Tools;
