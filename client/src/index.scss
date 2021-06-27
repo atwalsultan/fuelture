@@ -213,7 +213,7 @@ body {
 					}	
 				}
 
-				&#evMarket, &#evIncentives, &#evTimeline {
+				&#evMarket, &#evIncentives, &#evTimeline, &#salesFigures {
 					display: flex;
 					flex-flow: column nowrap;
 					gap: 32px;
@@ -226,10 +226,18 @@ body {
 						font-weight: 500;
 					}
 
-					div {
-						height: 70vh;
-						background-color: lightgray;
+					select {
+						max-width: max-content;
 					}
+
+					svg {
+						height: 82vh;
+					}
+
+					// div {
+					// 	height: 70vh;
+					// 	background-color: lightgray;
+					// }
 				}
 
 				&#findAnEv {
