@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import SalesFiguresFilters from './SalesFiguresFilters';
 import SalesFiguresViz from './SalesFiguresViz';
 
 const SalesFigures = ({ salesFigures }) => {
@@ -12,9 +11,7 @@ const SalesFigures = ({ salesFigures }) => {
     return (
         <section id="salesFigures">
             <h2>Canadian EV Sales Figures</h2>
-
-            <SalesFiguresFilters setProvince={setProvince} setType={setType}></SalesFiguresFilters>
-            <SalesFiguresViz salesFigures={salesFigures} province={province} type={type}></SalesFiguresViz>
+            <SalesFiguresViz salesFigures={salesFigures} province={province} type={type} setProvince={setProvince} setType={setType}></SalesFiguresViz>
             
         </section>
     )

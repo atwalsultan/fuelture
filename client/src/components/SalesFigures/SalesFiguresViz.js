@@ -1,5 +1,6 @@
 import { scaleLinear, extent, select, line, curveNatural, axisBottom, axisLeft } from "d3";
 import { useRef, useEffect, useState } from "react";
+import SalesFiguresFilters from './SalesFiguresFilters';
 // import ResizeObserver from "resize-observer-polyfill"; // npm install resize-observer-polyfill
 
 // Custom hook for responsive chart
@@ -21,7 +22,7 @@ const useResizeObserver = (ref) => {
     return dimensions;
 };
 
-const SalesFiguresViz = ({ salesFigures, province, type }) => {
+const SalesFiguresViz = ({ salesFigures, province, type, setProvince, setType }) => {
     // Refs for SVG
     const salesFiguresRef = useRef(null);
     const wrapperRef = useRef(null);
@@ -122,7 +123,7 @@ const SalesFiguresViz = ({ salesFigures, province, type }) => {
             .call(xAxis);
 
         // Plot Y Axis
-        const yAxis = axisLeft(yScale).tickSize(-dimensions.width).tickPadding(6);
+        const yAxis = axisLeft(yScale).tickSize(-dimensions.width).tickPadding(10);
         svg.select(".y-axis")
             .call(yAxis);
 
@@ -145,6 +146,7 @@ const SalesFiguresViz = ({ salesFigures, province, type }) => {
 
     return (
         <div ref={wrapperRef}>
+            <SalesFiguresFilters setProvince={setProvince} setType={setType}></SalesFiguresFilters>
             <svg ref={salesFiguresRef}>
                 <g className="x-axis"></g>
                 <g className="y-axis"></g>
