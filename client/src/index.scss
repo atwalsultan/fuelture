@@ -239,6 +239,7 @@ body {
 							height: 50vw;
 							max-height: 400px;
 							overflow: visible;
+							background-color: black;
 
 							g.tick {
 								line {
@@ -246,6 +247,16 @@ body {
 								}
 							}
 						}
+					}
+				}
+
+				&#evMarket {
+					&>div {
+						// display: flex;
+						// flex-flow: row nowrap;
+						// align-items: center;
+						// justify-content: center;
+						// gap: 3rem;
 					}
 				}
 

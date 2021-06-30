@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import ElectricVehicleIntro from "./ElectricVehicleIntro";
-import EvMarket from "./EvMarket";
+import MarketShare from "./MarketShare/MarketShare";
 import HomeBanner from "./HomeBanner";
 import TypesOfEvs from "./TypesOfEvs";
 import EvIncentives from "./EvIncentives";
@@ -50,7 +50,7 @@ const Home = () => {
 				<ElectricVehicleIntro></ElectricVehicleIntro>
 				<TypesOfEvs></TypesOfEvs>
 				<SalesFigures salesFigures={salesFigures}></SalesFigures>
-				<EvMarket></EvMarket>
+				<MarketShare salesFigures={salesFigures}></MarketShare>
 				<EvIncentives></EvIncentives>
 				<FindAnEv></FindAnEv>
 				<EvTimeline></EvTimeline>
