@@ -1,5 +1,6 @@
-import { select, easeLinear } from 'd3';
+import { select } from 'd3';
 import { useRef, useEffect, useState } from 'react';
+import MarketShareFilter from './MarketShareFilter';
 
 // Custom hook for responsive chart
 const useResizeObserver = (ref) => {
@@ -20,8 +21,9 @@ const useResizeObserver = (ref) => {
     return dimensions;
 };
 
-const MarketShareViz = ({ salesFigures }) => {
+const MarketShareViz = ({ salesFigures, order }) => {
 
+    // Refs for wrapper and chart
     const wrapperRef = useRef(null);
     const marketShareRef = useRef(null);
 
@@ -33,7 +35,6 @@ const MarketShareViz = ({ salesFigures }) => {
         
     // Restructure data by year. For each year, add figures about total sales and EV sales (will be used to calculate proportion) 
     let yearData = {};
-    
     data.map(figure => {
         if (!yearData.hasOwnProperty(figure.REF_DATE)) {
             if (figure["Fuel type"] === "All fuel types") {
@@ -61,12 +62,17 @@ const MarketShareViz = ({ salesFigures }) => {
 
     // const [yearlyData, setYearlyData] = useState({});
     const [dataTest, setDataTest] = useState([]);
-    const [year, setYear] = useState(2011);
+    const [year, setYear] = useState(order === "ascending" ? 2011 : 2020);
 
+    // Interval to move cars
+    let animationInterval = null;
+
+    // Everytime sales figures, year or parent container dimensions change
     useEffect(() => {
+        // If dimensions are not yet accessible
         if(!dimensions) return;
 
-        // Set coordinates
+        // Create coordinates for each car according to parent container size (number of cars depends on parent container size)
         let arr = [];
         for(let i=0; i < dimensions.width - 10; i+=15) {
             for(let j=10; j < dimensions.height - 10; j+=15) {
@@ -76,30 +82,32 @@ const MarketShareViz = ({ salesFigures }) => {
                 })
             }
         }
+
+        // Set new coordinates
         setDataTest(arr);
 
         // Select SVG for chart
         const svg = select(marketShareRef.current);
 
+        // Display cars initially
         svg.selectAll("circle")
             .data(dataTest)
             .join("circle")
             .attr("r", 5)
-            // .transition()
-            // .duration(500)
-            // .ease(easeLinear)
             .attr("cx", value => value.x)
             .attr("cy", value => value.y)
             .attr("stroke", "red")
             .attr("fill", "none");
 
+        // If sales figures are not yet accessible
         if (salesFigures.length === 0) return
 
+        // Calculate proportion of EVs out of total cars
         let proportion = yearData[year]["electric"] / yearData[year]["total"];
         let numCars = svg.selectAll("circle").size();
         let proportionNumCars = Math.round(proportion * numCars);
 
-        // Change color of proportionNumCars
+        // Change color of EVs
         for (let i=0; i<proportionNumCars; i++) {
             let randCar = Math.floor(Math.random() * numCars) + 1;
             svg.select(`circle:nth-child(${randCar})`)
@@ -107,41 +115,34 @@ const MarketShareViz = ({ salesFigures }) => {
                 .attr("fill", "blue");
         }
 
-    }, [salesFigures, year, dimensions])
+        // If animation interval previously existed
+        if(animationInterval) clearInterval(animationInterval);
 
-    useEffect(() => {
-        // Return if dimensions are not accessible
-        if (!dimensions) return;
-        
-        const interval = setInterval(() => {
-            setDataTest(dataTest => dataTest.map(coords => ({x: coords["x"] < dimensions.width ? coords["x"] + 5 : 10, y: coords["y"]})));
-            console.log(1);
+        // Create new animation interval
+        animationInterval = setInterval(() => {
+            setDataTest(dataTest => dataTest.map(coords => ({x: coords["x"] < dimensions.width ? coords["x"] + 5 : 0, y: coords["y"]})));
         }, 100);
 
-        return () => clearInterval(interval);
+        // Clear animation interval when component dismounts
+        return () => clearInterval(animationInterval);
 
-    }, [salesFigures]);
+    }, [salesFigures, year, dimensions])
 
+    // Every time co-ordinates change
     useEffect(() => {
+        // Select chart
         const svg = select(marketShareRef.current);
 
+        // Update co-ordinate of each car
         svg.selectAll("circle")
             .data(dataTest)
-            // .transition()
-            // .duration(500)
-            // .ease(easeLinear)
             .attr("cx", value => value.x)
     }, [dataTest])
 
     return (
         <div ref={wrapperRef}>
-            <select onChange={(e) => setYear(parseInt(e.target.value))}>
-                {
-                    Object.keys(yearData).map(year => <option value={year}>{year}</option>)
-                }
-            </select>
-            <svg ref={marketShareRef}>
-            </svg>
+            <MarketShareFilter setYear={setYear} yearData={yearData} order={order}></MarketShareFilter>
+            <svg ref={marketShareRef}></svg>
         </div>
     )
 }

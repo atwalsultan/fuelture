@@ -4,7 +4,11 @@ const MarketShare = ({salesFigures}) => {
     return (
         <section id="evMarket">
             <h2>Canadian EV Market</h2>
-            <MarketShareViz salesFigures={salesFigures}></MarketShareViz>
+
+            <div>
+                <MarketShareViz salesFigures={salesFigures} order="ascending"></MarketShareViz>
+                <MarketShareViz salesFigures={salesFigures} order="descending"></MarketShareViz>
+            </div>
         </section>
     )
 }
