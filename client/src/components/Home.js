@@ -3,7 +3,7 @@ import ElectricVehicleIntro from "./ElectricVehicleIntro";
 import MarketShare from "./MarketShare/MarketShare";
 import HomeBanner from "./HomeBanner";
 import TypesOfEvs from "./TypesOfEvs";
-import EvIncentives from "./EvIncentives";
+import EvIncentives from "./EvIncentives/EvIncentives";
 import EvTimeline from "./EvTimeline";
 import ReadEvNews from "./ReadEvNews";
 import FindAnEv from "./FindAnEv";
@@ -25,6 +25,7 @@ const Home = () => {
 				setIncentives(data);
 			}
 		};
+		
 		const getSalesFigures = async () => {
 			const url = "/api/sales";
 			const res = await fetch(url);
