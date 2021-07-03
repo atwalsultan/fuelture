@@ -22,7 +22,7 @@ const useResizeObserver = (ref) => {
     return dimensions;
 };
 
-const SalesFiguresViz = ({ salesFigures, province, type, setProvince, setType }) => {
+const SalesFiguresViz = ({ salesFigures, province, setProvince }) => {
     // Refs for SVG
     const salesFiguresRef = useRef(null);
     const wrapperRef = useRef(null);
@@ -36,24 +36,16 @@ const SalesFiguresViz = ({ salesFigures, province, type, setProvince, setType })
 
     // Fuel types
     const fuelTypes = [
-        "All fuel types",
-        "Gasoline",
-        "Diesel",
         "Battery electric",
         "Hybrid electric",
         "Plug-in hybrid electric",
-        "Other fuel types",
     ];
 
     // Mapping fuel types to colors
     const colors = {
-        "All fuel types": "blue",
-        Gasoline: "red",
-        Diesel: "orange",
         "Battery electric": "green",
         "Hybrid electric": "black",
         "Plug-in hybrid electric": "yellow",
-        "Other fuel types": "brown",
     };
 
     useEffect(() => {
@@ -69,8 +61,7 @@ const SalesFiguresViz = ({ salesFigures, province, type, setProvince, setType })
                 extent(
                     salesFigures.filter(
                         (figure) =>
-                            figure["GEO"] === `${province}` &&
-                            figure["Vehicle type"] === `${type}`
+                            figure["GEO"] === `${province}`
                     ),
                     xValue
                 )
@@ -83,8 +74,7 @@ const SalesFiguresViz = ({ salesFigures, province, type, setProvince, setType })
                 extent(
                     salesFigures.filter(
                         (figure) =>
-                            figure["GEO"] === `${province}` &&
-                            figure["Vehicle type"] === `${type}`
+                            figure["GEO"] === `${province}`
                     ),
                     yValue
                 )
@@ -94,7 +84,7 @@ const SalesFiguresViz = ({ salesFigures, province, type, setProvince, setType })
 
         // Plot points
         svg.selectAll("circle")
-            .data(salesFigures.filter(figure => figure["GEO"] === `${province}` && figure["Vehicle type"] === `${type}`))
+            .data(salesFigures.filter(figure => figure["GEO"] === `${province}`))
             .join("circle")
             .attr("r", 5)
             .attr("cx", value => xScale(xValue(value)))
@@ -108,7 +98,7 @@ const SalesFiguresViz = ({ salesFigures, province, type, setProvince, setType })
         svg.selectAll(".line")
             .data(
                 fuelTypes.map(fuelType => {
-                    return salesFigures.filter(figure => figure["GEO"] === `${province}` && figure["Vehicle type"] === `${type}` && figure["Fuel type"] === `${fuelType}`)
+                    return salesFigures.filter(figure => figure["GEO"] === `${province}` && figure["Fuel type"] === `${fuelType}`)
                 }))
             .join("path")
             .attr("class", "line")
@@ -142,11 +132,11 @@ const SalesFiguresViz = ({ salesFigures, province, type, setProvince, setType })
             .attr("transform", `translate(${-40},${dimensions.height /2}) rotate(-90)`)
             .text("Sales (In Thousands)");
 
-    }, [salesFigures, province, type, dimensions])
+    }, [salesFigures, province, dimensions])
 
     return (
         <div ref={wrapperRef}>
-            <SalesFiguresFilters setProvince={setProvince} setType={setType}></SalesFiguresFilters>
+            <SalesFiguresFilters setProvince={setProvince}></SalesFiguresFilters>
             <svg ref={salesFiguresRef}>
                 <g className="x-axis"></g>
                 <g className="y-axis"></g>

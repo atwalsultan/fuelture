@@ -1,4 +1,4 @@
-const SalesFiguresFilters = ({setProvince, setType}) => {
+const SalesFiguresFilters = ({setProvince}) => {
     return (
         <div>
             <select onChange={e => setProvince(e.target.value)}>
@@ -9,14 +9,6 @@ const SalesFiguresFilters = ({setProvince, setType}) => {
                 <option value="Manitoba">Manitoba</option>
                 <option value="Saskatchewan">Saskatchewan</option>
                 <option value="British Columbia and the Territories">British Columbia & the Territories</option>
-            </select>
-
-            <select onChange={e => setType(e.target.value)}>
-                <option value="Total, vehicle type">All Types</option>
-                <option value="Passenger cars">Passenger Cars</option>
-                <option value="Pickup trucks">Pickup Trucks</option>
-                <option value="Multi-purpose vehicles">Multi Purpose Vehicles</option>
-                <option value="Vans">Vans</option>
             </select>
         </div>
     )
