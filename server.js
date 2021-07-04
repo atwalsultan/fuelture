@@ -8,6 +8,7 @@ const incentives = require("./routes/api/incentives");
 const prices = require("./routes/api/prices");
 const teamMembers = require("./routes/api/members");
 const stations = require("./routes/api/stations");
+const contactForm = require("./routes/forms/contact");
 
 const app = express();
 
@@ -35,6 +36,7 @@ app.use("/api/incentives", incentives);
 app.use("/api/prices", prices);
 app.use("/api/team-members", teamMembers);
 app.use("/api/stations", stations);
+app.use("/about", contactForm);
 
 const port = process.env.PORT || 5000;
 

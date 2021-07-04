@@ -4,23 +4,23 @@ import TeamMember from "./TeamMember";
 const TeamMembers = () => {
   const [teamMembers, setTeamMembers] = useState([]);
 
-  const getTeamMembers = async () => {
-    const response = await fetch("/api/team-members");
-    const fetchedTeamMembers = await response.json();
-
-    setTeamMembers(fetchedTeamMembers);
-  };
-
   useEffect(() => {
+    // Initially when the component renders the unmounted variable set to false.
     let unmounted = false;
+
     const getTeamMembers = async () => {
-      const response = await fetch("/api/team-members");
-      const fetchedTeamMembers = await response.json();
+
+      // Set the state only when the component is mounted
       if (!unmounted) {
+        const response = await fetch("/api/team-members");
+        const fetchedTeamMembers = await response.json();
+
         setTeamMembers(fetchedTeamMembers);
       }
     };
     getTeamMembers();
+
+    // After this component gets unmounted unsubscribe any background calls.
     return () => {
       unmounted = true;
     };
