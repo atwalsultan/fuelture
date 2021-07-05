@@ -1,8 +1,10 @@
+import EvTimelineViz from './EvTimelineViz';
+
 const EvTimeline = () => {
     return (
         <section id="evTimeline">
             <h2>Timeline: A history of EVs</h2>
-            <div></div>
+            <EvTimelineViz />
         </section>
     )
 }

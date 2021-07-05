@@ -4,7 +4,7 @@ import MarketShare from "./MarketShare/MarketShare";
 import HomeBanner from "./HomeBanner";
 import TypesOfEvs from "./TypesOfEvs";
 import EvIncentives from "./EvIncentives/EvIncentives";
-import EvTimeline from "./EvTimeline";
+import EvTimeline from "./EvTimeline/EvTimeline";
 import ReadEvNews from "./ReadEvNews";
 import FindAnEv from "./FindAnEv";
 import SalesFigures from "./SalesFigures/SalesFigures";
