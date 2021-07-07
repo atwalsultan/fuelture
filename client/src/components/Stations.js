@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import { Icon } from 'leaflet';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 
 const Stations = () => {
@@ -29,21 +30,30 @@ const Stations = () => {
 		return () => {
 			unmounted = true;
 		};
-    }, [])
+    }, []);
+
+    const boltIcon = new Icon({
+        iconUrl: "/images/lightning-bolt-logo.svg",
+        // iconSize: [25, 25]
+    })
 
     return (
-        <MapContainer center={[49.2248, -123.1085]} zoom={5} scrollWheelZoom={true} style={{ height: "80vh" }}>
-            <TileLayer
-                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
+        <div className="page-content">
+            <MapContainer center={[49.2248, -123.1085]} zoom={9} scrollWheelZoom={true} style={{ height: "80vh" }}>
+                <TileLayer
+                    attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                    // url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
+                    // url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png"
+                />
 
-            {
-                stations.map(station => (
-                    <Marker key={station.id} position={[station.geometry.coordinates[1], station.geometry.coordinates[0]]} />
-                ))
-            }
-        </MapContainer>
+                {
+                    stations.map(station => (
+                        <Marker key={station.id} position={[station.geometry.coordinates[1], station.geometry.coordinates[0]]} icon={boltIcon}/>
+                    ))
+                }
+            </MapContainer>
+        </div>
     )
 }
 
