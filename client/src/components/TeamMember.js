@@ -13,9 +13,9 @@ const TeamMember = ({member}) => {
             </div>
 
             <div className="member-social-profile">
-                <a href={member.Linkedin}><FaLinkedin></FaLinkedin></a>
-                {member.Github !== "" && <a href={member.Github}><FaGithub></FaGithub></a>}
-                {member.Stackoverflow !== "" && <a href={member.Stackoverflow}><FaStackOverflow></FaStackOverflow></a>}
+                <a href={member.Linkedin} target="_blank"><FaLinkedin></FaLinkedin></a>
+                {member.Github !== "" && <a href={member.Github} target="_blank"><FaGithub></FaGithub></a>}
+                {member.Stackoverflow !== "" && <a href={member.Stackoverflow} target="_blank"><FaStackOverflow></FaStackOverflow></a>}
             </div>
         </div>
     )

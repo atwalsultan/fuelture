@@ -3,21 +3,35 @@ const ContactUs = () => {
         <section id="contactUs">
             <h2 className="section-heading">Reach Out To Us</h2>
 
-            <form action="/about" id="contactForm" method="POST">
-                <label htmlFor="firstName">First Name</label>
-                <input type="text" id="firstName" name="firstName" required/>
+            <div>
+                <img src="https://picsum.photos/300/300?random=2" alt="" />
 
-                <label htmlFor="lastName">Last Name</label>
-                <input type="text" id="lastName" name="lastName"/>
+                <form action="/about" id="contactForm" method="POST">
+                    <div>
+                        <div>
+                            <label htmlFor="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required/>
+                        </div>
 
-                <label htmlFor="email">Email</label>
-                <input type="email" id="email" name="email" required/>
+                        <div>
+                            <label htmlFor="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" placeholder="Enter your last name"/>
+                        </div>
+                    </div>
 
-                <label htmlFor="message">Message</label>
-                <input type="text" id="message" name="message" required/>
+                    <div>
+                        <label htmlFor="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required/>
+                    </div>
 
-                <button type="submit">Submit</button>
-            </form>
+                    <div>
+                        <label htmlFor="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Enter your message" required/>
+                    </div>
+
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
         </section>
     )
 }
