@@ -1,5 +1,5 @@
 import {Link, useLocation} from 'react-router-dom';
-import Logo from '../static/images/logo-light-bg.svg';
+import Logo from '../static/images/logo-dark-bg.svg';
 
 const Header = () => {
     const location = useLocation();
@@ -11,10 +11,10 @@ const Header = () => {
             </div>
 
             <ul>
-                <li><Link to="/news">News</Link></li>
-                <li><Link to="/tools">Tools</Link></li>
-                <li><Link to="/stations">Stations</Link></li>
-                <li><Link to="/about">About</Link></li>
+                <li className={location.pathname === "/news" ? 'active-page' : ''}><Link to="/news">News</Link></li>
+                <li className={location.pathname === "/tools" ? 'active-page' : ''}><Link to="/tools">Tools</Link></li>
+                <li className={location.pathname === "/stations" ? 'active-page' : ''}><Link to="/stations">Stations</Link></li>
+                <li className={location.pathname === "/about" ? 'active-page' : ''}><Link to="/about">About</Link></li>
             </ul>
         </header>
     )
