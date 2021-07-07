@@ -3,10 +3,19 @@ import {Markup} from 'interweave';
 const Article = ({article}) => {
     return (
         <li className="article-list-item">
-            <img width="300" height="auto" src={article.img} alt="" />
-            <a href={article.link}><h4>{article.title}</h4></a>
-            {/* <Markup content={article.content} /> */}
-            <p>Published on: {article.pubDate}</p>
+            <div>
+                <img width="300" height="auto" src={article.img} alt="" />
+                <h4>
+                    <a href={article.link} target="_blank">{`${article.title}`}</a>
+                </h4>
+
+                {/* <Markup content={article.content} /> */}
+            </div>
+
+            <footer>
+                <p>By {article.author !== '' ? article.author : article.publisher}</p>
+                <a href={article.link} target="_blank">Read Article</a>
+            </footer>
         </li>
     )
 }

@@ -34,12 +34,12 @@ const Stations = () => {
 
     const boltIcon = new Icon({
         iconUrl: "/images/lightning-bolt-logo.svg",
-        // iconSize: [25, 25]
+        iconSize: [25, 25]
     })
 
     return (
         <div className="page-content">
-            <MapContainer center={[49.2248, -123.1085]} zoom={9} scrollWheelZoom={true} style={{ height: "80vh" }}>
+            <MapContainer center={[49.2248, -123.1085]} zoom={12} scrollWheelZoom={true} style={{ height: "80vh" }}>
                 <TileLayer
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     // url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

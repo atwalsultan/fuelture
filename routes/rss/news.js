@@ -36,7 +36,8 @@ router.get('/', (req, res) => {
                 content: item.contentSnippet,
                 pubDate: `${item.pubDate.split("2021")[0]}2021`,
                 link: item.link,
-
+                publisher: `Autoblog`,
+                author: item["dc:creator"]
             }
 
             items.push(obj);
@@ -51,6 +52,8 @@ router.get('/', (req, res) => {
                 content: item.contentSnippet,
                 pubDate: `${item.pubDate.split("2021")[0]}2021`,
                 link: item.link,
+                publisher: `Autoevolution`,
+                author: item["dc:creator"].toString().split('(').pop().split(')')[0]
             }
 
             items.push(obj);
@@ -66,7 +69,8 @@ router.get('/', (req, res) => {
                 content: item.contentSnippet,
                 pubDate: `${item.pubDate.split("2021")[0]}2021`,
                 link: item.link,
-
+                publisher: `InsideEVs`,
+                author: ``
             }
 
             items.push(obj);

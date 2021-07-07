@@ -23,7 +23,7 @@ body {
 	div#root {
 		display: flex;
 		flex-flow: column nowrap;
-		min-height: 105vh;		
+		min-height: 101vh;		
 
 		img {
 			max-width: 100%;
@@ -124,29 +124,77 @@ body {
 			flex-grow: 1;
 
 			#articles {
-				// Article page variables
-				$articles_row_gap: 3.5rem;
-				$articles_column_gap: 2rem;
-
 				display: grid;
 				grid-template-columns: repeat(3, 1fr);
-				column-gap: $articles_column_gap;
-				row-gap: $articles_row_gap;
-
-				@media screen and (max-width: $breakpoint) {
-					grid-template-columns: repeat(1, 1fr);
-				}
+				column-gap: 32px;
+				row-gap: 56px;
 
 				.article-list-item {
+
+					&:first-of-type {
+						grid-column: 1 / span 2;
+						grid-row: 1 / span 2;
+					}
+
 					display: flex;
 					flex-flow: column nowrap;
-					justify-content: center;
-					gap: .5rem;
 
-					img {
-						width: 100%;
-						height: auto;
+					&>div {
+						flex-grow: 1;
+						display: grid;
+						grid-template-rows: repeat(5, 1fr);
+						overflow: hidden;
+	
+						img {
+							min-width: 100%;
+							min-height: 100%;
+							object-fit: cover;
+							display: block;
+							grid-row: 1 / -1;
+							grid-column: 1;
+							transition: 0.5s all ease-in-out;
+
+							&:hover {
+								transform: scale(1.2);
+							}
+						}
+	
+						&>h4 {
+							font-size: 18px;
+							font-weight: 500;
+							color: #bdd237;
+							grid-row: 4 / -1;
+							grid-column: 1;
+							z-index: 10;
+
+							display: flex;
+							flex-flow: column nowrap;
+							justify-content: flex-end;
+
+							a {
+								padding: 16px;
+								background-color: rgba(20, 46, 64, 0.8);
+							}
+						}
 					}
+
+					&>footer {
+						display: flex;
+						flex-flow: row nowrap;
+						justify-content: space-between;
+						align-items: center;
+						padding-left: 16px;
+						background-color: #142e40;
+						color: rgba(236, 236, 236, 0.7);
+
+						a {
+							padding: 12px 16px;
+							background-color: #bdd237;
+							color: #142e40;
+							text-decoration: underline;
+						}
+					}
+					
 				}
 			}
 
@@ -548,7 +596,7 @@ body {
 			}
 		}
 
-		footer {
+		&>footer {
 			padding: 11px;
 			display: flex;
 			flex-flow: row nowrap;
