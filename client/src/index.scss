@@ -73,18 +73,18 @@ body {
 		}
 
 		div.home-banner {
-			height: 520px;
-			background-color: black;
+			// height: 520px;
+			background-color: #091821;
 			display: flex;
 			flex-flow: row nowrap;
 			justify-content: space-between;
 			align-items: center;
 			width: 100%;
-			// background-image: linear-gradient(to right, #04060a, rgba(4, 6, 10, 0));
+			padding: 0 142px;
+			gap: 56px;
 
 			div {
-				flex-grow: 2;
-				padding-left: 142px;
+				max-width: 500px;
 
 				h2 {
 					font-size: 40px;
@@ -123,8 +123,6 @@ body {
 			}
 
 			img {
-				// flex-basis: 25%;
-				flex-grow: 1;
 				min-width: 0;
 				max-height: 100%;
 				object-fit: cover;
@@ -132,49 +130,60 @@ body {
 		}
 
 		div.tools-banner {
-			// Home banner variables
-			$home_banner_padding: 10.5rem $page_margin_horizontal;
-			$home_banner_heading_font_size: 2.488rem;
-			$home_banner_heading_font_weight: 500;
-			$home_banner_paragraph_font_size: 1.75rem;
-			$home_banner_gap: 1.5rem;
-
-
-			background-color: lightgray;
-			min-height: 10vh;
-			padding: $home_banner_padding;
+			// height: 520px;
+			background-color: #091821;
 			display: flex;
-			flex-flow: column nowrap;
-			align-items: flex-start;
-			gap: $home_banner_gap;
+			flex-flow: row nowrap;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
+			padding: 0 142px;
+			gap: 56px;
 
-			h2 {
-				font-size: $home_banner_heading_font_size;
-				font-weight: $home_banner_heading_font_weight;
-				max-width: 45%;
+			div {
+				max-width: 500px;
+
+				h2 {
+					font-size: 40px;
+					font-weight: 500;
+					color: #bdd237;
+					max-width: 590px;
+				}
+
+				p {
+					color: #ececec;
+					font-size: 22px;
+					font-weight: 400;
+					margin-top: 16px;
+					margin-bottom: 42px;
+				}
+	
+				button {
+					padding: 16px 32px;
+					border: none;
+					background-color: #bdd237;
+					border-radius: 4px;
+					color: #091821;
+					font-size: 18px;
+					font-family: inherit;
+					transition: all 0.2s ease-in-out;
+	
+					&:active {
+						transform: scale(0.8);
+					}
+	
+					&:hover {
+						cursor: pointer;
+					}
+				}
+
 			}
 
-			p {
-				font-size: $home_banner_paragraph_font_size;
-				color: rgb(105, 105, 105);
-				max-width: 45%;
+			img {
+				min-width: 0;
+				max-height: 100%;
+				object-fit: cover;
 			}
-
-			button {
-				margin-top: 32px;
-				width: 200px;
-				height: 50px;
-				border-radius: 4px;
-				font-size: 19px;
-				font-family: inherit;
-				border: none;
-				text-transform: capitalize;
-				cursor: pointer;
-			}
-		}
-
-		div.tools-banner {
-			align-items: flex-end;
 		}
 
 		.page-content {
@@ -280,6 +289,9 @@ body {
 						font-size: 23px;
 						font-weight: 400;
 						color: #ececec;
+						max-width: 800px;
+						margin: auto;
+						text-align: left;
 					}
 				}
 
@@ -571,28 +583,40 @@ body {
 					}
 				}
 
-				&#calculateCost, &#findEv {
+				&#calculateCost {
 					margin-top: 120px;
-					margin-bottom: 64px;
+					margin-bottom: 120px;
 					display: flex;
 					flex-flow: column nowrap;
-					gap: 32px;
+					gap: 36px;
 					text-align: center;
+					background-color: #142e40;
+					height: 520px;
 
 					h2 {
-						text-transform: capitalize;
-						font-size: 33px;
+						font-size: 32px;
 						font-weight: 500;
-					}
-
-					div {
-						height: 80vh;
-						background-color: lightgray;
+						color: #bbd237;
+						padding: 72px;
 					}
 				}
 
 				&#findEv {
-					margin-top: 64px;
+					margin-top: 120px;
+					margin-bottom: 120px;
+					display: flex;
+					flex-flow: column nowrap;
+					gap: 36px;
+					text-align: center;
+					background-color: #142e40;
+					height: 520px;
+
+					h2 {
+						font-size: 32px;
+						font-weight: 500;
+						color: #bbd237;
+						padding: 72px;
+					}
 				}
 
 				&#contactUs {
