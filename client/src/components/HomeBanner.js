@@ -9,7 +9,7 @@ const HomeBanner = () => {
                 <Button text="Get Started"></Button>
             </div>
 
-            <img src="https://picsum.photos/700/1500?random=2" alt="" />
+            <img src="https://picsum.photos/400?random=2" alt="" />
         </div>
     )
 }
