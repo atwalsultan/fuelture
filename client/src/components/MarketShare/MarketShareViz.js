@@ -140,9 +140,11 @@ const MarketShareViz = ({ salesFigures, order }) => {
     }, [dataTest])
 
     return (
-        <div ref={wrapperRef}>
+        <div>
             <MarketShareFilter setYear={setYear} yearData={yearData} order={order}></MarketShareFilter>
-            <svg ref={marketShareRef}></svg>
+            <div ref={wrapperRef}>
+                <svg ref={marketShareRef}></svg>
+            </div>
         </div>
     )
 }

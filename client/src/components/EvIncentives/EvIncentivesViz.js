@@ -41,6 +41,15 @@ const EvIncentivesViz = () => {
 
     const [incentives, setIncentives] = useState([]);
 
+    const colors = {
+        "Canada": "#bdd237",
+        "British Columbia": "#ddf540",
+        "Quebec": "#8dcef7",
+        "Nova Scotia": "#436275",
+        "Prince Edward Island": "#348cc2",
+        "Ontario": "#afc232"
+    }
+
     useEffect(() => {
         // Initially when the component renders the unmounted variable set to false.
         let unmounted = false;
@@ -76,12 +85,12 @@ const EvIncentivesViz = () => {
         const leaf = svg.selectAll("g")
             .data(root.leaves())
             .join("g")
-            .attr("transform", d => `translate(${d.x + 1}, ${d.y + 1})`);
+            .attr("transform", d => `translate(${d.x + 1}, ${d.y + 1})`)
+            .attr("fill", leaf => colors[leaf.data.Province]);
 
         leaf.append("circle")
-            .attr("r", d => d.r)
-            .attr("fill-opacity", 0.7)
-            .attr("fill", "navy");
+            .attr("r", d => d.r);
+
     }, [incentives, dimensions])
 
     return (
