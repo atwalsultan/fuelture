@@ -1,9 +1,9 @@
-import {Link, useLocation} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
-const Button = ({text, color, link}) => {
+const Button = ({text, link}) => {
     return (
         <Link to={link ? link : ``}>
-            <button style={{backgroundColor: `${color}`}}>{text}</button>
+            <button>{text}</button>
         </Link>
     )
 }

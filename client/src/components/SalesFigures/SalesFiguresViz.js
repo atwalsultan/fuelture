@@ -43,9 +43,9 @@ const SalesFiguresViz = ({ salesFigures, province, setProvince }) => {
 
     // Mapping fuel types to colors
     const colors = {
-        "Battery electric": "green",
-        "Hybrid electric": "black",
-        "Plug-in hybrid electric": "yellow",
+        "Battery electric": "#bdd237",
+        "Hybrid electric": "#6e7542",
+        "Plug-in hybrid electric": "#42b0f5",
     };
 
     useEffect(() => {
@@ -90,8 +90,7 @@ const SalesFiguresViz = ({ salesFigures, province, setProvince }) => {
             .attr("cx", value => xScale(xValue(value)))
             .attr("cy", value => yScale(yValue(value)))
             .attr("stroke", value => colors[value["Fuel type"]])
-            .attr("fill", "none");
-
+            .attr("fill", value => colors[value["Fuel type"]]);
         
         // Plot lines
         const myLine = line().x(d => xScale(xValue(d))).y(d => yScale(yValue(d))).curve(curveNatural)
@@ -113,7 +112,7 @@ const SalesFiguresViz = ({ salesFigures, province, setProvince }) => {
             .call(xAxis);
 
         // Plot Y Axis
-        const yAxis = axisLeft(yScale).tickSize(-dimensions.width).tickPadding(10);
+        const yAxis = axisLeft(yScale).ticks().tickSize(-dimensions.width).tickPadding(10);
         svg.select(".y-axis")
             .call(yAxis);
 
@@ -135,14 +134,17 @@ const SalesFiguresViz = ({ salesFigures, province, setProvince }) => {
     }, [salesFigures, province, dimensions])
 
     return (
-        <div ref={wrapperRef}>
+        <div>
             <SalesFiguresFilters setProvince={setProvince}></SalesFiguresFilters>
-            <svg ref={salesFiguresRef}>
-                <g className="x-axis"></g>
-                <g className="y-axis"></g>
-                <text className="x-label"></text>
-                <text className="y-label"></text>
-            </svg>
+            <div ref={wrapperRef}>
+                <svg ref={salesFiguresRef}>
+                    <g className="x-axis"></g>
+                    <g className="y-axis"></g>
+                    <text className="x-label"></text>
+                    <text className="y-label"></text>
+                </svg>
+            </div>
+            
         </div>
     );
 };

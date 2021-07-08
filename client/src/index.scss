@@ -72,7 +72,66 @@ body {
 			}
 		}
 
-		div.home-banner, div.tools-banner {
+		div.home-banner {
+			height: 520px;
+			background-color: black;
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
+			// background-image: linear-gradient(to right, #04060a, rgba(4, 6, 10, 0));
+
+			div {
+				flex-grow: 2;
+				padding-left: 142px;
+
+				h2 {
+					font-size: 40px;
+					font-weight: 500;
+					color: #bdd237;
+					max-width: 590px;
+				}
+
+				p {
+					color: #ececec;
+					font-size: 22px;
+					font-weight: 400;
+					margin-top: 16px;
+					margin-bottom: 42px;
+				}
+	
+				button {
+					padding: 16px 32px;
+					border: none;
+					background-color: #bdd237;
+					border-radius: 4px;
+					color: #091821;
+					font-size: 18px;
+					font-family: inherit;
+					transition: all 0.2s ease-in-out;
+	
+					&:active {
+						transform: scale(0.8);
+					}
+	
+					&:hover {
+						cursor: pointer;
+					}
+				}
+
+			}
+
+			img {
+				// flex-basis: 25%;
+				flex-grow: 1;
+				min-width: 0;
+				max-height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		div.tools-banner {
 			// Home banner variables
 			$home_banner_padding: 10.5rem $page_margin_horizontal;
 			$home_banner_heading_font_size: 2.488rem;
@@ -119,7 +178,7 @@ body {
 		}
 
 		.page-content {
-			padding: $page_margin_vertical $page_margin_horizontal;
+			padding: 56px 142px;
 			background-color: #091821;
 			flex-grow: 1;
 
@@ -198,27 +257,6 @@ body {
 				}
 			}
 
-			#readEvNews {
-				margin-top: 56px;
-				display: flex;
-				flex-flow: row nowrap;
-				align-items: center;
-				justify-content: center;
-
-				button {
-					margin-top: 32px;
-					width: 200px;
-					height: 50px;
-					border-radius: 4px;
-					font-size: 16px;
-					font-family: inherit;
-					border: none;
-					margin-bottom: 28px;
-					text-transform: capitalize;
-					cursor: pointer;
-				}
-			}
-
 			section {
 				.section-heading {
 					color: #c2d055;
@@ -228,17 +266,20 @@ body {
 					text-align: center;
 					display: flex;
 					flex-flow: column nowrap;
-					gap: 32px;
+					margin-top: 24px;
+					gap: 16px;
 
 					h2 {
-						font-size: 33px;
+						font-size: 32px;
 						font-weight: 500;
 						text-transform: capitalize;
+						color:  #bdd237;
 					}
 
 					p {
 						font-size: 23px;
 						font-weight: 400;
+						color: #ececec;
 					}
 				}
 
@@ -246,45 +287,172 @@ body {
 					display: flex;
 					flex-flow: column nowrap;
 					gap: 32px;
-					margin-top: 120px;
+					margin-top: 66px;
 					text-align: center;
 
 					h2 {
 						text-transform: capitalize;
-						font-size: 33px;
+						font-size: 28px;
 						font-weight: 500;
+						color:  #bdd237;
 					}
 
 					ul.ev-types {
 						display: flex;
 						flex-flow: row nowrap;
-						gap: 2rem;
+						gap: 20px;
+						width: 100%;
 
 						li {
+							flex-grow: 1;
 							display: flex;
 							flex-flow: column nowrap;
-							gap: 32px;
 							flex-basis: 30%;
+							text-align: left;
 
 							div	{
 								height: 15vw;
-								background-color: lightgray;
+								background-color: #142e40;
+							}
+
+							p:first-of-type {
+								margin-top: 17px;
+								margin-bottom: 9px;
+								font-size: 28px;
+								font-weight: 400;
+								color: #bdd237;
+							}
+
+							p:last-of-type {
+								font-size: 18px;
+								font-weight: 400;
+								color: #ececec;
 							}
 						}
 					}	
 				}
 
-				&#evMarket, &#evIncentives, &#evTimeline, &#salesFigures {
+				&#salesFigures {
 					display: flex;
 					flex-flow: column nowrap;
-					gap: 32px;
-					margin-top: 120px;
+					gap: 88px;
+					margin-top: 100px;
 					text-align: center;
 
 					h2 {
 						text-transform: capitalize;
-						font-size: 33px;
+						font-size: 32px;
 						font-weight: 500;
+						color:  #bdd237;
+					}
+
+					
+					&>div {						
+						div {
+							padding: 0 50px 0 50px;
+							max-height:400px;
+
+							svg {
+								width: 100%;
+								height:400px;
+								overflow: visible;
+								color: rgba(245, 245, 245, 0.4);
+
+								text {
+									font-size: 14px;
+								}
+							}
+						}
+
+						select {
+							max-width: max-content;
+							margin-bottom: 68px;
+							padding: 16px;
+							background-color: transparent;
+							font-size: 20px;
+							font-weight: 300;
+							color: #bdd237;
+							border: 1px solid #ececec;
+							border-radius: 4px;
+							outline: none;
+							// background-image: url(...);   /* Add custom arrow */
+
+							option {
+								background-color: #091821;
+								color: #ececec;
+							}
+						}
+					}
+				}
+
+				&#evMarket {
+					display: flex;
+					flex-flow: column nowrap;
+					gap: 56px;
+					margin-top: 174px;
+					text-align: center;
+
+					h2 {
+						text-transform: capitalize;
+						font-size: 32px;
+						font-weight: 500;
+						color:  #bdd237;
+					}
+
+					&>div {
+						display: flex;
+						flex-flow: row nowrap;
+						align-items: center;
+						justify-content: center;
+						gap: 2rem;
+
+						&>div {
+							display: flex;
+							flex-flow: column nowrap;
+							gap: 25px;
+							align-items: center;
+
+							svg {
+								max-height: 400px;
+								width: 100%;
+								height: 350px;
+								overflow: hidden;
+								background-color: black;
+							}
+							
+							select {
+								max-width: max-content;
+								padding: 16px;
+								background-color: transparent;
+								font-size: 20px;
+								font-weight: 300;
+								color: #bdd237;
+								border: 1px solid #ececec;
+								border-radius: 4px;
+								outline: none;
+								// background-image: url(...);   /* Add custom arrow */
+		
+								option {
+									background-color: #091821;
+									color: #ececec;
+								}
+							}
+						}
+					}
+				}
+
+				&#evIncentives {
+					display: flex;
+					flex-flow: column nowrap;
+					gap: 32px;
+					margin-top: 174px;
+					text-align: center;
+
+					h2 {
+						text-transform: capitalize;
+						font-size: 32px;
+						font-weight: 500;
+						color: #bdd237;
 					}
 
 					select {
@@ -295,9 +463,9 @@ body {
 						padding: 0 75px 75px 75px;
 
 						svg {
+							max-height: 400px;
 							width: 100%;
 							height: 50vw;
-							max-height: 400px;
 							overflow: visible;
 
 							g.tick {
@@ -309,61 +477,97 @@ body {
 					}
 				}
 
-				&#evMarket {
-					&>div {
-						display: flex;
-						flex-flow: row nowrap;
-						align-items: center;
-						justify-content: center;
-						gap: 2rem;
-
-						svg {
-							overflow: hidden;
-							background-color: black;
-						}
-					}
-				}
-
-				&#evIncentives {
-					&>div {
-						svg {
-							// border: 1px solid black;
-						}
-					}
-				}
-
 				&#findAnEv {
-					margin-top: 56px;
 					display: flex;
 					flex-flow: row nowrap;
 					align-items: center;
 					justify-content: space-between;
+					padding: 31px 69px 46px 49px;
+					background-color: #142e40;
+					max-width: 760px;
+					margin: auto;
+					margin-top: 50px;
 
 					div {
 						display: flex;
 						flex-flow: column nowrap;
-						gap: 32px;
+						gap: 8px;
 
 						h3 {
 							font-size: 28px;
-							font-weight: 500;
+							font-weight: 400;
+							color: #bbd237;
+							max-width: 400px;
 
 						}
 
 						p {
-							font-size: 23px;
+							font-size: 18px;
+							color: #ececec;
 						}
 					}
 
 					button {
-						width: 200px;
-						height: 50px;
+						padding: 16px 32px;
 						border-radius: 4px;
-						font-size: 16px;
+						font-size: 18px;
+						color: #091821;
+						background-color: #bdd237;
 						font-family: inherit;
 						border: none;
-						text-transform: capitalize;
 						cursor: pointer;
+
+						transition: all 0.2s ease-in-out;
+
+						&:active {
+							transform: scale(0.8);
+						}
+					}
+				}
+
+				&#evTimeline {
+					display: flex;
+					flex-flow: column nowrap;
+					gap: 32px;
+					margin-top: 80px;
+					text-align: center;
+
+					h2 {
+						text-transform: capitalize;
+						font-size: 32px;
+						font-weight: 500;
+						color: #bbd237;
+					}
+				}
+
+				&#readEvNews {
+					margin-top: 66px;
+					display: flex;
+					flex-flow: column nowrap;
+					align-items: center;
+					gap: 18px;
+
+					h3 {
+						font-size: 28px;
+						font-weight: 500;
+						color: #bbd237;
+					}
+	
+					button {
+						padding: 16px 42.5px;
+						border-radius: 4px;
+						font-size: 18px;
+						font-family: inherit;
+						border: 2px solid #bbd237;
+						background-color: transparent;
+						color: #bbd237;
+						cursor: pointer;
+
+						transition: .2s all ease-in-out;
+
+						&:active {
+							transform: scale(0.8);
+						}
 					}
 				}
 

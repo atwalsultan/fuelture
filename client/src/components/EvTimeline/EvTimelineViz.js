@@ -133,8 +133,8 @@ const EvTimelineViz = () => {
     ];
 
     return (
-        <div>
-            <Chrono items={items} mode="HORIZONTAL" />
+        <div style={{color: "#ececec"}}>
+            <Chrono items={items} mode="HORIZONTAL" theme={{"primary":"#142e40","secondary":"#bbd237"}}/>
         </div>
     )
 }
