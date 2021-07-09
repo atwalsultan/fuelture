@@ -1,9 +1,10 @@
 import Button from "./Button"
+import Illustration from '../static/images/illustration-recommend.png';
 
 const ToolsBanner2 = () => {
     return (
         <div className="tools-banner">
-            <img src="https://picsum.photos/400?random=2" alt="" />
+            <img src={Illustration} alt="Recommendation tool illustration" />
 
             <div>
                 <h2>Considering an EV? Try our recommendation tool</h2>

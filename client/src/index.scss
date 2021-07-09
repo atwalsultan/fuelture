@@ -73,14 +73,13 @@ body {
 		}
 
 		div.home-banner {
-			// height: 520px;
 			background-color: #091821;
 			display: flex;
 			flex-flow: row nowrap;
 			justify-content: space-between;
 			align-items: center;
 			width: 100%;
-			padding: 0 142px;
+			padding: 56px 142px 0px 142px;
 			gap: 56px;
 
 			div {
@@ -130,14 +129,13 @@ body {
 		}
 
 		div.tools-banner {
-			// height: 520px;
 			background-color: #091821;
 			display: flex;
 			flex-flow: row nowrap;
 			justify-content: space-between;
 			align-items: center;
 			width: 100%;
-			padding: 0 142px;
+			padding: 56px 142px 0px 142px;
 			gap: 56px;
 
 			div {
@@ -319,12 +317,13 @@ body {
 							flex-grow: 1;
 							display: flex;
 							flex-flow: column nowrap;
-							flex-basis: 30%;
+							flex-basis: 26%;
 							text-align: left;
 
-							div	{
-								height: 15vw;
-								background-color: #142e40;
+							img {
+								flex-grow: 1;
+								max-width: 80%;
+								margin: auto;
 							}
 
 							p:first-of-type {
@@ -370,8 +369,10 @@ body {
 								overflow: visible;
 								color: rgba(245, 245, 245, 0.4);
 
-								text {
+								text.y-label, text.x-label {
 									font-size: 14px;
+									stroke: rgba(245, 245, 245, 0.4);
+									font-weight: lighter;
 								}
 							}
 						}
