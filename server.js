@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const path = require("path");
 
 const sales = require("./routes/api/sales");
 const news = require("./routes/rss/news");
@@ -37,6 +38,15 @@ app.use("/api/prices", prices);
 app.use("/api/team-members", teamMembers);
 app.use("/api/stations", stations);
 app.use("/about", contactForm);
+
+__dirname = path.resolve();
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "/client/build")));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(((__dirname = "client"), "build", "index.html")));
+  });
+  //  if block ends
+}
 
 const port = process.env.PORT || 5000;
 
