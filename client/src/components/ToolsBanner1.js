@@ -1,9 +1,10 @@
 import Button from "./Button"
+import Illustration from '../static/images/illustration-calculate.png';
 
 const ToolsBanner1 = () => {
     return (
         <div className="tools-banner">
-            <img src="https://picsum.photos/400?random=2" alt="" />
+            <img src={Illustration} alt="Comparison tool illustration" />
 
             <div>
                 <h2>Know the money you paid and the emissions your car produced</h2>

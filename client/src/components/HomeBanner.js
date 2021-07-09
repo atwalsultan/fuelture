@@ -1,4 +1,5 @@
 import Button from "./Button"
+import Illustration from '../static/images/illustration-landing.png'
 
 const HomeBanner = () => {
     return (
@@ -9,7 +10,7 @@ const HomeBanner = () => {
                 <Button text="Get Started"></Button>
             </div>
 
-            <img src="https://picsum.photos/400?random=2" alt="" />
+            <img src={Illustration} alt="Home banner illustration" />
         </div>
     )
 }

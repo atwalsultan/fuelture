@@ -1,10 +1,12 @@
+import Illustration from '../static/images/illustration-contact.png';
+
 const ContactUs = () => {
     return (
         <section id="contactUs">
             <h2 className="section-heading">Reach Out To Us</h2>
 
             <div>
-                <img src="https://picsum.photos/300/300?random=2" alt="" />
+                <img src={Illustration} alt="Contact form illustration" />
 
                 <form action="/about" id="contactForm" method="POST">
                     <div>
