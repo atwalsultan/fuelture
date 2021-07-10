@@ -124,6 +124,7 @@ body {
 			img {
 				min-width: 0;
 				max-height: 100%;
+				max-width: 510px;
 				object-fit: cover;
 			}
 		}
@@ -180,6 +181,7 @@ body {
 			img {
 				min-width: 0;
 				max-height: 100%;
+				max-width: 510px;
 				object-fit: cover;
 			}
 		}
@@ -648,6 +650,10 @@ body {
 						&>* {
 							flex-grow: 1;
 							min-width: 0;
+						}
+
+						img {
+							max-width: 325px;
 						}
 
 						form {
