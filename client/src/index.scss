@@ -299,7 +299,7 @@ body {
 					display: flex;
 					flex-flow: column nowrap;
 					gap: 32px;
-					margin-top: 66px;
+					margin-top: 56px;
 					text-align: center;
 
 					h2 {
@@ -329,7 +329,7 @@ body {
 							}
 
 							p:first-of-type {
-								margin-top: 17px;
+								margin-top: 32px;
 								margin-bottom: 9px;
 								font-size: 28px;
 								font-weight: 400;
@@ -348,8 +348,8 @@ body {
 				&#salesFigures {
 					display: flex;
 					flex-flow: column nowrap;
-					gap: 88px;
-					margin-top: 100px;
+					gap: 40px;
+					margin-top: 88px;
 					text-align: center;
 
 					h2 {
@@ -360,7 +360,10 @@ body {
 					}
 
 					
-					&>div {						
+					&>div {
+						padding: 19px 140px 54px 140px;
+						background-color: #142e40;
+
 						div {
 							padding: 0 50px 0 50px;
 							max-height:400px;
@@ -377,24 +380,24 @@ body {
 									font-weight: lighter;
 								}
 							}
-						}
 
-						select {
-							max-width: max-content;
-							margin-bottom: 68px;
-							padding: 16px;
-							background-color: transparent;
-							font-size: 20px;
-							font-weight: 300;
-							color: #bdd237;
-							border: 1px solid #ececec;
-							border-radius: 4px;
-							outline: none;
-							// background-image: url(...);   /* Add custom arrow */
-
-							option {
-								background-color: #091821;
-								color: #ececec;
+							select {
+								max-width: max-content;
+								margin-bottom: 68px;
+								padding: 16px;
+								background-color: transparent;
+								font-size: 20px;
+								font-weight: 300;
+								color: #bdd237;
+								border: 1px solid #ececec;
+								border-radius: 4px;
+								outline: none;
+								// background-image: url(...);   /* Add custom arrow */
+	
+								option {
+									background-color: #091821;
+									color: #ececec;
+								}
 							}
 						}
 					}
@@ -404,7 +407,7 @@ body {
 					display: flex;
 					flex-flow: column nowrap;
 					gap: 56px;
-					margin-top: 174px;
+					margin-top: 88px;
 					text-align: center;
 
 					h2 {
@@ -419,18 +422,19 @@ body {
 						flex-flow: row nowrap;
 						align-items: center;
 						justify-content: center;
-						gap: 2rem;
+						gap: 120px;
+						padding: 44px 40px 40px 40px;
+						background-color: #142e40;
 
 						&>div {
 							display: flex;
 							flex-flow: column nowrap;
-							gap: 25px;
+							gap: 30px;
 							align-items: center;
 
 							svg {
-								max-height: 400px;
+								height: 275px;
 								width: 100%;
-								height: 350px;
 								overflow: hidden;
 								background-color: black;
 							}
@@ -460,7 +464,7 @@ body {
 					display: flex;
 					flex-flow: column nowrap;
 					gap: 32px;
-					margin-top: 174px;
+					margin-top: 88px;
 					text-align: center;
 
 					h2 {
@@ -544,7 +548,7 @@ body {
 					display: flex;
 					flex-flow: column nowrap;
 					gap: 32px;
-					margin-top: 80px;
+					margin-top: 88px;
 					text-align: center;
 
 					h2 {
@@ -556,7 +560,8 @@ body {
 				}
 
 				&#readEvNews {
-					margin-top: 66px;
+					margin-top: 64px;
+					margin-bottom: 72px;
 					display: flex;
 					flex-flow: column nowrap;
 					align-items: center;
@@ -594,13 +599,13 @@ body {
 					gap: 36px;
 					text-align: center;
 					background-color: #142e40;
+					padding: 64px 78px;
 					height: 520px;
 
 					h2 {
 						font-size: 32px;
 						font-weight: 500;
 						color: #bbd237;
-						padding: 72px;
 					}
 				}
 
@@ -612,23 +617,26 @@ body {
 					gap: 36px;
 					text-align: center;
 					background-color: #142e40;
+					padding: 64px 78px;
 					height: 520px;
 
 					h2 {
 						font-size: 32px;
 						font-weight: 500;
 						color: #bbd237;
-						padding: 72px;
 					}
 				}
 
 				&#contactUs {
 					margin-top: 120px;
+					margin-bottom: 72px;
 					display: flex;
 					flex-flow: column nowrap;
 					justify-content: center;
 					align-items: center;
 					gap: 56px;
+					background-color: #142e40;
+					padding: 56px 80px;
 
 					.section-heading {
 						text-align: center;
@@ -644,8 +652,6 @@ body {
 						align-items: center;
 						gap: 98px;
 						width: 100%;
-						padding: 52px 98px;
-						background-color: #142e40;
 
 						&>* {
 							flex-grow: 1;
