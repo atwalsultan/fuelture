@@ -1,6 +1,8 @@
 import { select } from 'd3';
 import { useRef, useEffect, useState } from 'react';
 import MarketShareFilter from './MarketShareFilter';
+import Car from '../../static/images/car-icon.svg';
+import CarWhite from '../../static/images/car-icon-white.svg';
 
 // Custom hook for responsive chart
 const useResizeObserver = (ref) => {
@@ -60,7 +62,6 @@ const MarketShareViz = ({ salesFigures, order }) => {
         }
     });
 
-    // const [yearlyData, setYearlyData] = useState({});
     const [dataTest, setDataTest] = useState([]);
     const [year, setYear] = useState(order === "ascending" ? 2011 : 2020);
 
@@ -74,8 +75,8 @@ const MarketShareViz = ({ salesFigures, order }) => {
 
         // Create coordinates for each car according to parent container size (number of cars depends on parent container size)
         let arr = [];
-        for(let i=0; i < dimensions.width - 10; i+=15) {
-            for(let j=10; j < dimensions.height - 10; j+=15) {
+        for(let i=10; i < dimensions.width + 30; i+=45) {
+            for(let j=0; j < dimensions.height - 5; j+=25) {
                 arr.push({
                     x: i,
                     y: j
@@ -89,30 +90,31 @@ const MarketShareViz = ({ salesFigures, order }) => {
         // Select SVG for chart
         const svg = select(marketShareRef.current);
 
-        // Display cars initially
-        svg.selectAll("circle")
+        svg.selectAll("image")
             .data(dataTest)
-            .join("circle")
-            .attr("r", 5)
-            .attr("cx", value => value.x)
-            .attr("cy", value => value.y)
-            .attr("stroke", "red")
-            .attr("fill", "none");
+            .join("image")
+            .attr('width', 30)
+            .attr('height', 30)
+            .attr("xlink:href", CarWhite)
+            .attr("fill", "#c9c9c9")
+            .attr('x', value => value.x)
+            .attr('y', value => value.y);
 
         // If sales figures are not yet accessible
         if (salesFigures.length === 0) return
 
         // Calculate proportion of EVs out of total cars
         let proportion = yearData[year]["electric"] / yearData[year]["total"];
-        let numCars = svg.selectAll("circle").size();
+        let numCars = svg.selectAll("image").size();
         let proportionNumCars = Math.round(proportion * numCars);
+
+        console.log(proportion, proportionNumCars)
 
         // Change color of EVs
         for (let i=0; i<proportionNumCars; i++) {
             let randCar = Math.floor(Math.random() * numCars) + 1;
-            svg.select(`circle:nth-child(${randCar})`)
-                .attr("stroke", "blue")
-                .attr("fill", "blue");
+            svg.select(`image:nth-child(${randCar})`)
+                .attr("xlink:href", Car);
         }
 
         // If animation interval previously existed
@@ -120,7 +122,7 @@ const MarketShareViz = ({ salesFigures, order }) => {
 
         // Create new animation interval
         animationInterval = setInterval(() => {
-            setDataTest(dataTest => dataTest.map(coords => ({x: coords["x"] < dimensions.width ? coords["x"] + 5 : 0, y: coords["y"]})));
+            setDataTest(dataTest => dataTest.map(coords => ({x: coords["x"] < dimensions.width ? coords["x"] + 2 : -30, y: coords["y"]})));
         }, 100);
 
         // Clear animation interval when component dismounts
@@ -134,9 +136,9 @@ const MarketShareViz = ({ salesFigures, order }) => {
         const svg = select(marketShareRef.current);
 
         // Update co-ordinate of each car
-        svg.selectAll("circle")
+        svg.selectAll("image")
             .data(dataTest)
-            .attr("cx", value => value.x)
+            .attr("x", value => value.x)
     }, [dataTest])
 
     return (
