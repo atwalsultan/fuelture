@@ -67,35 +67,47 @@ const FindEvViz = () => {
     return (
         <div>
             <form onSubmit={submitHandler}>
-                <label htmlFor="budget">Budget</label>
-                <input type="number" id="budget" min={specs.map(spec => spec.PriceEuro).reduce((a,b)=>Math.min(a,b), Infinity)} onChange={(e) => setBudget(e.target.value)} required/>
+                <div>
+                    <div>    
+                        <label htmlFor="budget">Budget</label>
+                        <input type="number" id="budget" min={specs.map(spec => spec.PriceEuro).reduce((a,b)=>Math.min(a,b), Infinity)} onChange={(e) => setBudget(e.target.value)} required/>
+                    </div>
 
-                <label htmlFor="brand">Preferred Brand</label>
-                <select name="brand" id="brand" onChange={brandChange} required>
-                    <option value="Any">Any</option>
-                    {
-                        specs.map(spec => spec.Brand).filter((x, i, a) => a.indexOf(x) === i).map(brand => <option value={brand}>{brand}</option>)
-                    }
-                </select>
+                    <div> 
+                        <label htmlFor="brand">Brand</label>
+                        <select name="brand" id="brand" onChange={brandChange} required>
+                            <option value="Any">Any</option>
+                            {
+                                specs.map(spec => spec.Brand).filter((x, i, a) => a.indexOf(x) === i).map(brand => <option value={brand}>{brand}</option>)
+                            }
+                        </select>
+                    </div>
 
-                <label htmlFor="seats">Seats (Atleast)</label>
-                <input type="number" id="seats" min={specs.map(spec => spec.Seats).reduce((a,b)=>Math.min(a,b), Infinity)} max={specs.map(spec => spec.Seats).reduce((a,b)=>Math.max(a,b), -Infinity)} onChange={(e) => setSeats(parseInt(e.target.value))} required />
+                    <div>    
+                        <label htmlFor="seats">Seats</label>
+                        <input type="number" id="seats" min={specs.map(spec => spec.Seats).reduce((a,b)=>Math.min(a,b), Infinity)} max={specs.map(spec => spec.Seats).reduce((a,b)=>Math.max(a,b), -Infinity)} onChange={(e) => setSeats(parseInt(e.target.value))} required />
+                    </div>
 
-                <label htmlFor="range">Range (Atleast)</label>
-                <input type="number" id="range" min={specs.map(spec => spec.Range).reduce((a,b)=>Math.min(a,b), Infinity)} max={specs.map(spec => spec.Range).reduce((a,b)=>Math.max(a,b), -Infinity)} onChange={(e) => setRange(parseInt(e.target.value))} required />
+                    <div>    
+                        <label htmlFor="range">Range</label>
+                        <input type="number" id="range" min={specs.map(spec => spec.Range).reduce((a,b)=>Math.min(a,b), Infinity)} max={specs.map(spec => spec.Range).reduce((a,b)=>Math.max(a,b), -Infinity)} onChange={(e) => setRange(parseInt(e.target.value))} required />
+                    </div>
 
-                <label htmlFor="style">Body Style</label>
-                <select name="style" id="style" onChange={styleChange} required>
-                    <option value="Any">Any</option>
-                    {
-                        specs.map(spec => spec.BodyStyle).filter((x, i, a) => a.indexOf(x) === i).map(style => <option value={style}>{style}</option>)
-                    }
-                </select>
+                    <div>    
+                        <label htmlFor="style">Body Style</label>
+                        <select name="style" id="style" onChange={styleChange} required>
+                            <option value="Any">Any</option>
+                            {
+                                specs.map(spec => spec.BodyStyle).filter((x, i, a) => a.indexOf(x) === i).map(style => <option value={style}>{style}</option>)
+                            }
+                        </select>
+                    </div>
+                </div>
 
-                <button type="submit">Submit</button>
+                <div>
+                    <button type="submit">Submit</button>
+                </div>
             </form>
-
-            <hr />
 
             <div>
                 <ul>

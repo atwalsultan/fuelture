@@ -617,12 +617,92 @@ body {
 					text-align: center;
 					background-color: #142e40;
 					padding: 64px 78px;
-					height: 520px;
 
 					h2 {
 						font-size: 32px;
 						font-weight: 500;
 						color: #bbd237;
+					}
+
+					&>div {
+						form {
+							display: flex;
+							flex-flow: column nowrap;
+							align-items: center;
+							gap: 44px;
+							padding-bottom: 54.5px;
+							border-bottom: 1px solid rgba(236, 236, 236, 0.8);
+
+							div:first-of-type {
+								display: flex;
+								flex-flow: row nowrap;
+								gap: 40px;
+								justify-content: space-between;
+								align-items: center;
+								max-width: 100%;
+
+								div {
+									display: flex;
+									flex-flow: column nowrap;
+									gap: 22px;
+									align-items: center;
+									min-width: 0;
+									flex-basis: 20%;
+
+									label {
+										color: #ececec;
+										font-size: 18px;
+										font-weight: 400;
+									}
+
+									select, input {
+										padding: 16px;
+										background-color: transparent;
+										font-size: 20px;
+										font-weight: 300;
+										color: #bdd237;
+										border: 1px solid #ececec;
+										border-radius: 4px;
+										outline: none;
+										width: 100%;
+										// background-image: url(...);   /* Add custom arrow */
+			
+										option {
+											background-color: #091821;
+											color: #ececec;
+									
+										}	
+									}
+
+									input {
+
+									}
+								}
+							}
+
+							div:last-of-type {
+								button {
+									padding: 18px 32px;
+									max-width: max-content;
+									font-size: 18px;
+									font-weight: 400;
+									font-family: inherit;
+									border-radius: 4px;
+									background-color: #bdd237;
+									border: none;
+									outline: none;
+									transition: 0.2s all ease-in-out;
+	
+									&:active {
+										transform: scale(0.8);
+									}
+	
+									&:hover {
+										cursor: pointer;
+									}
+								}
+							}
+						}
 					}
 				}
 
