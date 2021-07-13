@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import EvRecommendations from "./EvRecommendations";
 
 const FindEvViz = () => {
     const [specs, setSpecs] = useState([]);
@@ -109,13 +110,7 @@ const FindEvViz = () => {
                 </div>
             </form>
 
-            <div>
-                <ul>
-                    {
-                        cars.map(car => <li>{car.Brand} {car.Model}</li>)
-                    }
-                </ul>
-            </div>
+            <EvRecommendations cars={cars}/>
         </div>
     )
 }
