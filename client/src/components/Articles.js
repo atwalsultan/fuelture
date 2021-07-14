@@ -26,7 +26,7 @@ const Articles = () => {
     <div className="page-content">
       <ul id="articles">
         {articles.map((article, index) => {
-          return <Article key={index} article={article} />;
+          return <Article key={index} index={index} article={article} />;
         })}
       </ul>
     </div>
