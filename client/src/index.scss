@@ -617,12 +617,257 @@ body {
 					text-align: center;
 					background-color: #142e40;
 					padding: 64px 78px;
-					height: 520px;
 
 					h2 {
 						font-size: 32px;
 						font-weight: 500;
 						color: #bbd237;
+					}
+
+					&>div {
+						form {
+							display: flex;
+							flex-flow: column nowrap;
+							align-items: center;
+							gap: 44px;
+							padding-bottom: 54.5px;
+							border-bottom: 1px solid rgba(236, 236, 236, 0.8);
+
+							div:first-of-type {
+								display: flex;
+								flex-flow: row nowrap;
+								gap: 40px;
+								justify-content: space-between;
+								align-items: center;
+								max-width: 100%;
+
+								div {
+									display: flex;
+									flex-flow: column nowrap;
+									gap: 22px;
+									align-items: center;
+									min-width: 0;
+									flex-basis: 20%;
+
+									label {
+										color: #ececec;
+										font-size: 18px;
+										font-weight: 400;
+									}
+
+									select, input {
+										padding: 16px;
+										background-color: transparent;
+										font-size: 20px;
+										font-weight: 300;
+										color: #bdd237;
+										border: 1px solid #ececec;
+										border-radius: 4px;
+										outline: none;
+										width: 100%;
+										// background-image: url(...);   /* Add custom arrow */
+			
+										option {
+											background-color: #091821;
+											color: #ececec;
+									
+										}	
+									}
+
+									input {
+
+									}
+								}
+							}
+
+							div:last-of-type {
+								button {
+									padding: 18px 32px;
+									max-width: max-content;
+									font-size: 18px;
+									font-weight: 400;
+									font-family: inherit;
+									border-radius: 4px;
+									background-color: #bdd237;
+									border: none;
+									outline: none;
+									transition: 0.2s all ease-in-out;
+	
+									&:active {
+										transform: scale(0.8);
+									}
+	
+									&:hover {
+										cursor: pointer;
+									}
+								}
+							}
+						}
+
+						&>div {
+							padding: 71.5px 0;
+
+							ul {
+								display: flex;
+								flex-flow: row wrap;
+								justify-content: center;
+								gap: 40px;
+
+								li {
+									flex-basis: 25%;
+									flex-grow: 1;
+									background-color: #ececec;
+									text-align: left;
+									position: relative;
+									overflow: hidden;
+
+									div.ev-additional-info {
+										position: absolute;
+										width: 100%;
+										background-color: rgba(9, 24, 33, 0.95);
+										color: #ececec;
+										border-top: 8px solid #bdd237;
+										bottom: 0;
+										display: flex;
+										flex-flow: column nowrap;
+										transition: all .5s ease-in-out;
+
+										&.additional-info-hidden {
+											transform: translateY(calc(100% - 8px));
+										}
+
+										&>div {
+											padding: 10px 16px;
+											border-bottom: 1px solid #ececec;
+											display: flex;
+											flex-flow: row nowrap;
+											gap: 5px;
+
+											&:last-of-type {
+												border-bottom: none;
+											}
+
+											div {
+												display: flex;
+												flex-flow: column nowrap;
+												gap: 10px;
+												flex-basis: 25%;
+												flex-grow: 1;
+	
+												p {
+													font-size: 14px;
+	
+													&:first-of-type {
+														font-weight: 500;
+													}
+												}
+											}
+										}
+									}
+
+									div.ev-recommendation {
+										display: flex;
+										flex-flow: column nowrap;
+										height: 100%;
+
+										div.ev-brand-model {
+											display: flex;
+											flex-flow: column nowrap;
+											gap: 2px;
+											flex-grow: 1;
+											padding: 16px 16px 0px 16px;
+
+											&:hover {
+												cursor: pointer;
+											}
+
+											p:first-of-type {
+												text-transform: uppercase;
+												font-size: 22px;
+												font-weight: 500;
+											}
+
+											p:last-of-type {
+												font-size: 18px;
+											}
+										}
+
+										div.ev-image {
+											padding: 0 16px;
+
+											&:hover {
+												cursor: pointer;
+											}
+
+											img {
+												width: 100%;
+												height: auto;
+												object-fit: cover;
+											}
+										}
+
+										div.ev-price-range {
+											display: flex;
+											flex-flow: row nowrap;
+											justify-content: space-between;
+											align-items: center;
+											padding: 0 16px;
+											padding-bottom: 16px;
+											border-bottom: 1px solid rgb(175, 175, 175);
+
+											&:hover {
+												cursor: pointer;
+											}
+
+											&>div {
+												flex-grow: 1;
+												display: flex;
+												flex-flow: column nowrap;
+												gap: 8px;
+
+												p:first-of-type {
+													font-size: 14px;
+												}
+
+												p:last-of-type {
+													font-size: 22px;
+													font-weight: 400;
+												}
+											}
+										}
+
+										div.ev-type-seats-drivetrain {
+											display: flex;
+											flex-flow: row nowrap;
+											justify-content: space-between;
+											padding: 16px;
+
+											&:hover {
+												cursor: pointer;
+											}
+
+											&>div:nth-of-type(2), div:first-of-type {
+												flex-grow: 1;
+											}
+
+											&>div {
+												display: flex;
+												flex-flow: column nowrap;
+												gap: 9px;
+
+												p:first-of-type {
+													font-size: 14px;
+												}
+
+												p:nth-of-type {
+													font-size: 16px;
+												}
+											}
+										}
+									}
+								}
+							}
+						}
 					}
 				}
 

@@ -108,8 +108,6 @@ const MarketShareViz = ({ salesFigures, order }) => {
         let numCars = svg.selectAll("image").size();
         let proportionNumCars = Math.round(proportion * numCars);
 
-        console.log(proportion, proportionNumCars)
-
         // Change color of EVs
         for (let i=0; i<proportionNumCars; i++) {
             let randCar = Math.floor(Math.random() * numCars) + 1;
@@ -122,8 +120,8 @@ const MarketShareViz = ({ salesFigures, order }) => {
 
         // Create new animation interval
         animationInterval = setInterval(() => {
-            setDataTest(dataTest => dataTest.map(coords => ({x: coords["x"] < dimensions.width ? coords["x"] + 2 : -30, y: coords["y"]})));
-        }, 100);
+            setDataTest(dataTest => dataTest.map(coords => ({x: coords["x"] < dimensions.width ? coords["x"] + 1 : -30, y: coords["y"]})));
+        }, 75);
 
         // Clear animation interval when component dismounts
         return () => clearInterval(animationInterval);
