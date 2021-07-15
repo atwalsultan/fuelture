@@ -10,7 +10,6 @@ $section_heading_font_size: 2.074rem;
 $body_text_heading_font_size: 1.44rem;
 $large_body_text_font-size: 1.44rem;
 
-
 * {
 	padding: 0;
 	margin: 0;
@@ -23,7 +22,7 @@ body {
 	div#root {
 		display: flex;
 		flex-flow: column nowrap;
-		min-height: 101vh;		
+		min-height: 101vh;
 
 		img {
 			max-width: 100%;
@@ -99,7 +98,7 @@ body {
 					margin-top: 16px;
 					margin-bottom: 42px;
 				}
-	
+
 				button {
 					padding: 16px 32px;
 					border: none;
@@ -109,16 +108,15 @@ body {
 					font-size: 18px;
 					font-family: inherit;
 					transition: all 0.2s ease-in-out;
-	
+
 					&:active {
 						transform: scale(0.8);
 					}
-	
+
 					&:hover {
 						cursor: pointer;
 					}
 				}
-
 			}
 
 			img {
@@ -156,7 +154,7 @@ body {
 					margin-top: 16px;
 					margin-bottom: 42px;
 				}
-	
+
 				button {
 					padding: 16px 32px;
 					border: none;
@@ -166,16 +164,15 @@ body {
 					font-size: 18px;
 					font-family: inherit;
 					transition: all 0.2s ease-in-out;
-	
+
 					&:active {
 						transform: scale(0.8);
 					}
-	
+
 					&:hover {
 						cursor: pointer;
 					}
 				}
-
 			}
 
 			img {
@@ -198,12 +195,11 @@ body {
 				row-gap: 56px;
 
 				.article-list-item {
-
 					&:first-of-type {
 						grid-column: 1 / span 2;
 						grid-row: 1 / span 2;
 
-						&>div {
+						& > div {
 							h4 {
 								grid-row: 5 / -1;
 								grid-column: 1;
@@ -214,12 +210,12 @@ body {
 					display: flex;
 					flex-flow: column nowrap;
 
-					&>div {
+					& > div {
 						flex-grow: 1;
 						display: grid;
 						grid-template-rows: repeat(5, 1fr);
 						overflow: hidden;
-	
+
 						img {
 							min-width: 100%;
 							min-height: 100%;
@@ -233,8 +229,8 @@ body {
 								transform: scale(1.2);
 							}
 						}
-	
-						&>h4 {
+
+						& > h4 {
 							font-size: 18px;
 							font-weight: 500;
 							color: #bdd237;
@@ -253,7 +249,7 @@ body {
 						}
 					}
 
-					&>footer {
+					& > footer {
 						display: flex;
 						flex-flow: row nowrap;
 						justify-content: space-between;
@@ -269,7 +265,6 @@ body {
 							text-decoration: underline;
 						}
 					}
-					
 				}
 			}
 
@@ -289,7 +284,7 @@ body {
 						font-size: 32px;
 						font-weight: 500;
 						text-transform: capitalize;
-						color:  #bdd237;
+						color: #bdd237;
 					}
 
 					p {
@@ -313,7 +308,7 @@ body {
 						text-transform: capitalize;
 						font-size: 28px;
 						font-weight: 500;
-						color:  #bdd237;
+						color: #bdd237;
 					}
 
 					ul.ev-types {
@@ -349,7 +344,7 @@ body {
 								color: #ececec;
 							}
 						}
-					}	
+					}
 				}
 
 				&#salesFigures {
@@ -363,34 +358,51 @@ body {
 						text-transform: capitalize;
 						font-size: 32px;
 						font-weight: 500;
-						color:  #bdd237;
+						color: #bdd237;
 					}
 
-					
-					&>div {
+					& > div {
 						padding: 19px 140px 54px 140px;
 						background-color: #142e40;
+						display: flex;
+						flex-flow: column nowrap;
+						gap: 68px;
 
-						div {
-							padding: 0 50px 0 50px;
-							max-height:400px;
+						div.filters-legend {
+							display: flex;
+							flex-flow: row nowrap;
+							justify-content: space-between;
+							align-items: center;
+							padding: 0 50px;
 
-							svg {
-								width: 100%;
-								height:400px;
-								overflow: visible;
-								color: rgba(245, 245, 245, 0.4);
+							ul {
+								display: flex;
+								flex-flow: row nowrap;
+								justify-content: space-between;
+								align-items: center;
+								gap: 30px;
+								color: #ececec;
+								font-size: 16px;
+								min-width: 0;
 
-								text.y-label, text.x-label {
-									font-size: 14px;
-									stroke: rgba(245, 245, 245, 0.4);
-									font-weight: lighter;
+								li {
+									display: flex;
+									flex-flow: row nowrap;
+									justify-content: center;
+									align-items: center;
+									gap: 6px;
+									min-width: 0;
+
+									span:first-of-type {
+										height: 25px;
+										width: 25px;
+										border-radius: 50%;
+									}
 								}
 							}
 
 							select {
 								max-width: max-content;
-								margin-bottom: 68px;
 								padding: 16px;
 								background-color: transparent;
 								font-size: 20px;
@@ -399,11 +411,32 @@ body {
 								border: 1px solid #ececec;
 								border-radius: 4px;
 								outline: none;
+								min-width: 0;
 								// background-image: url(...);   /* Add custom arrow */
-	
+
 								option {
 									background-color: #091821;
 									color: #ececec;
+									min-width: 0;
+								}
+							}
+						}
+
+						div.viz {
+							padding: 0 50px 0 50px;
+							max-height: 400px;
+
+							svg {
+								width: 100%;
+								height: 400px;
+								overflow: visible;
+								color: rgba(245, 245, 245, 0.4);
+
+								text.y-label,
+								text.x-label {
+									font-size: 14px;
+									stroke: rgba(245, 245, 245, 0.4);
+									font-weight: lighter;
 								}
 							}
 						}
@@ -421,10 +454,10 @@ body {
 						text-transform: capitalize;
 						font-size: 32px;
 						font-weight: 500;
-						color:  #bdd237;
+						color: #bdd237;
 					}
 
-					&>div {
+					& > div {
 						display: flex;
 						flex-flow: row nowrap;
 						align-items: center;
@@ -433,7 +466,7 @@ body {
 						padding: 44px 40px 40px 40px;
 						background-color: #142e40;
 
-						&>div {
+						& > div {
 							display: flex;
 							flex-flow: column nowrap;
 							gap: 30px;
@@ -444,7 +477,7 @@ body {
 								width: 325px;
 								overflow: hidden;
 							}
-							
+
 							select {
 								max-width: max-content;
 								padding: 16px;
@@ -456,11 +489,26 @@ body {
 								border-radius: 4px;
 								outline: none;
 								// background-image: url(...);   /* Add custom arrow */
-		
+
 								option {
 									background-color: #091821;
 									color: #ececec;
 								}
+							}
+						}
+
+						div.market-share-text {
+							color: #ececec;
+							display: flex;
+							flex-flow: row nowrap;
+							justify-content: center;
+							align-items: center;
+							gap: 14px;
+
+							span:first-of-type {
+								font-size: 48px;
+								font-weight: 500;
+								color: #bbd237;
 							}
 						}
 					}
@@ -484,7 +532,7 @@ body {
 						max-width: max-content;
 					}
 
-					&>div {
+					& > div {
 						padding: 0 75px 75px 75px;
 
 						svg {
@@ -523,7 +571,6 @@ body {
 							font-weight: 400;
 							color: #bbd237;
 							max-width: 400px;
-
 						}
 
 						p {
@@ -578,7 +625,7 @@ body {
 						font-weight: 500;
 						color: #bbd237;
 					}
-	
+
 					button {
 						padding: 16px 42.5px;
 						border-radius: 4px;
@@ -589,7 +636,7 @@ body {
 						color: #bbd237;
 						cursor: pointer;
 
-						transition: .2s all ease-in-out;
+						transition: 0.2s all ease-in-out;
 
 						&:active {
 							transform: scale(0.8);
@@ -631,7 +678,7 @@ body {
 						color: #bbd237;
 					}
 
-					&>div {
+					& > div {
 						form {
 							display: flex;
 							flex-flow: column nowrap;
@@ -662,7 +709,8 @@ body {
 										font-weight: 400;
 									}
 
-									select, input {
+									select,
+									input {
 										padding: 16px;
 										background-color: transparent;
 										font-size: 20px;
@@ -673,16 +721,14 @@ body {
 										outline: none;
 										width: 100%;
 										// background-image: url(...);   /* Add custom arrow */
-			
+
 										option {
 											background-color: #091821;
 											color: #ececec;
-									
-										}	
+										}
 									}
 
 									input {
-
 									}
 								}
 							}
@@ -699,11 +745,11 @@ body {
 									border: none;
 									outline: none;
 									transition: 0.2s all ease-in-out;
-	
+
 									&:active {
 										transform: scale(0.8);
 									}
-	
+
 									&:hover {
 										cursor: pointer;
 									}
@@ -711,7 +757,7 @@ body {
 							}
 						}
 
-						&>div {
+						& > div {
 							padding: 71.5px 0;
 
 							ul {
@@ -737,13 +783,13 @@ body {
 										bottom: 0;
 										display: flex;
 										flex-flow: column nowrap;
-										transition: all .5s ease-in-out;
+										transition: all 0.5s ease-in-out;
 
 										&.additional-info-hidden {
 											transform: translateY(calc(100% - 8px));
 										}
 
-										&>div {
+										& > div {
 											padding: 10px 16px;
 											border-bottom: 1px solid #ececec;
 											display: flex;
@@ -760,10 +806,10 @@ body {
 												gap: 10px;
 												flex-basis: 25%;
 												flex-grow: 1;
-	
+
 												p {
 													font-size: 14px;
-	
+
 													&:first-of-type {
 														font-weight: 500;
 													}
@@ -826,7 +872,7 @@ body {
 												cursor: pointer;
 											}
 
-											&>div {
+											& > div {
 												flex-grow: 1;
 												display: flex;
 												flex-flow: column nowrap;
@@ -853,11 +899,12 @@ body {
 												cursor: pointer;
 											}
 
-											&>div:nth-of-type(2), div:first-of-type {
+											& > div:nth-of-type(2),
+											div:first-of-type {
 												flex-grow: 1;
 											}
 
-											&>div {
+											& > div {
 												display: flex;
 												flex-flow: column nowrap;
 												gap: 9px;
@@ -896,7 +943,7 @@ body {
 						font-weight: 500;
 					}
 
-					&>div {
+					& > div {
 						display: flex;
 						flex-flow: row nowrap;
 						justify-content: space-between;
@@ -904,7 +951,7 @@ body {
 						gap: 98px;
 						width: 100%;
 
-						&>* {
+						& > * {
 							flex-grow: 1;
 							min-width: 0;
 						}
@@ -919,14 +966,14 @@ body {
 							justify-content: center;
 							gap: 25px;
 
-							&>div:not(div:first-of-type) {
+							& > div:not(div:first-of-type) {
 								display: flex;
 								flex-flow: column nowrap;
 								justify-content: center;
 								gap: 8px;
 							}
 
-							&>div:first-of-type {
+							& > div:first-of-type {
 								display: flex;
 								flex-flow: row nowrap;
 								align-items: center;
@@ -948,7 +995,8 @@ body {
 								color: #ececec;
 							}
 
-							input, textarea {
+							input,
+							textarea {
 								padding: 18px 11px;
 								font-size: 18px;
 								font-family: inherit;
@@ -997,7 +1045,6 @@ body {
 				}
 
 				&#teamMembers {
-					
 					text-align: center;
 					color: #ebebeb;
 
@@ -1037,19 +1084,19 @@ body {
 								margin-bottom: 18px;
 								max-width: 134px;
 								height: auto;
-								// object-fit: cover;
+								border: 4px solid #bbd237;
 							}
 
 							div.member-name-role {
 								// flex-grow: 1;
 								margin-bottom: 8px;
-								
+
 								p.team-member-name {
 									margin-bottom: 8px;
 									font-size: 28px;
 									font-weight: 500;
 								}
-	
+
 								p.team-member-role {
 									font-size: 22px;
 									font-weight: 400;
@@ -1088,7 +1135,7 @@ body {
 			}
 		}
 
-		&>footer {
+		& > footer {
 			padding: 11px;
 			display: flex;
 			flex-flow: row nowrap;

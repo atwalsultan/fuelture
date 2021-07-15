@@ -1,6 +1,7 @@
 import { select } from 'd3';
 import { useRef, useEffect, useState } from 'react';
 import MarketShareFilter from './MarketShareFilter';
+import MarketShareLegend from './MarketShareLegend';
 import Car from '../../static/images/car-icon.svg';
 import CarWhite from '../../static/images/car-icon-white.svg';
 
@@ -64,6 +65,7 @@ const MarketShareViz = ({ salesFigures, order }) => {
 
     const [dataTest, setDataTest] = useState([]);
     const [year, setYear] = useState(order === "ascending" ? 2011 : 2020);
+    const [proportion, setProportion] = useState("0%")
 
     // Interval to move cars
     let animationInterval = null;
@@ -105,6 +107,8 @@ const MarketShareViz = ({ salesFigures, order }) => {
 
         // Calculate proportion of EVs out of total cars
         let proportion = yearData[year]["electric"] / yearData[year]["total"];
+        setProportion(`${(proportion * 100).toFixed(2)}%`);
+
         let numCars = svg.selectAll("image").size();
         let proportionNumCars = Math.round(proportion * numCars);
 
@@ -145,6 +149,7 @@ const MarketShareViz = ({ salesFigures, order }) => {
             <div ref={wrapperRef}>
                 <svg ref={marketShareRef}></svg>
             </div>
+            <MarketShareLegend proportion={proportion}></MarketShareLegend>
         </div>
     )
 }
