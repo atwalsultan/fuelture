@@ -42,7 +42,7 @@ const EvIncentivesViz = () => {
     const [incentives, setIncentives] = useState([]);
 
     const colors = {
-        "Canada": "#bdd237",
+        "Federal": "#bdd237",
         "British Columbia": "#ddf540",
         "Quebec": "#8dcef7",
         "Nova Scotia": "#436275",
@@ -86,17 +86,52 @@ const EvIncentivesViz = () => {
             .data(root.leaves())
             .join("g")
             .attr("transform", d => `translate(${d.x + 1}, ${d.y + 1})`)
-            .attr("fill", leaf => colors[leaf.data.Province]);
+            .attr("fill", leaf => leaf.data.Color);
 
         leaf.append("circle")
-            .attr("r", d => d.r);
+            .attr("r", d => d.r)
+
+        svg.selectAll("g")
+            .data(incentives)
+            .append("text")
+            .text(incentive => incentive.Max_Incentive)
+            .attr("fill", value => value.TextColor)
+            .attr("stroke", value => value.TextColor)
+            .attr("dy", ".35em")
+            .attr("text-anchor", "middle")
+            .attr("font-size", value => {
+                if(value.Max_Incentive === 8000) {
+                    return 50;
+                }
+                if(value.Max_Incentive === 5000) {
+                    return 40;
+                }
+                if(value.Max_Incentive === 30) {
+                    return 30;
+                }
+            })
 
     }, [incentives, dimensions])
 
     return (
-        <div ref={wrapperRef}>
-            <svg ref={incentivesRef}></svg>
-        </div>
+        <>
+            <div ref={wrapperRef}>
+                <svg ref={incentivesRef}></svg>
+            </div>
+
+            <ul>
+                {
+                    incentives.map(incentive => {
+                        return (
+                            <li>
+                                <span style={{backgroundColor: `${incentive.Color}`}}></span>
+                                <span>{incentive.Province}</span>
+                            </li>
+                        )
+                    })
+                }
+            </ul>
+        </>
     )
 }
 
