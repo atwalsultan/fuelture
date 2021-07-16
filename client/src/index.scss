@@ -517,7 +517,6 @@ body {
 				&#evIncentives {
 					display: flex;
 					flex-flow: column nowrap;
-					gap: 32px;
 					margin-top: 88px;
 					text-align: center;
 
@@ -528,24 +527,40 @@ body {
 						color: #bdd237;
 					}
 
-					select {
-						max-width: max-content;
+					ul {
+						display: flex;
+						flex-flow: row wrap;
+						justify-content: center;
+						align-items: center;
+						gap: 32px;
+						color: #ececec;
+						position: relative;
+						top: -48px;
+
+						li {
+							flex-basis: 15%;
+							display: flex;
+							flex-flow: row nowrap;
+							gap: 6px;
+							justify-content: center;
+							align-items: center;
+
+							span:first-of-type {
+								height: 25px;
+								width: 25px;
+								min-width: 25px;
+								border-radius: 50%;
+							}
+						}
 					}
 
 					& > div {
 						padding: 0 75px 75px 75px;
 
 						svg {
-							max-height: 400px;
+							height: 500px;
 							width: 100%;
-							height: 50vw;
 							overflow: visible;
-
-							g.tick {
-								line {
-									stroke: lightgray;
-								}
-							}
 						}
 					}
 				}
