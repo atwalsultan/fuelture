@@ -1,4 +1,4 @@
-import { scaleLinear, extent, select, line, curveNatural, axisBottom, axisLeft } from "d3";
+import { scaleLinear, extent, select, line, axisBottom, axisLeft } from "d3";
 import { useRef, useEffect, useState } from "react";
 import SalesFiguresFilters from './SalesFiguresFilters';
 import SalesFiguresLegend from "./SalesFiguresLegend";
@@ -94,7 +94,7 @@ const SalesFiguresViz = ({ salesFigures, province, setProvince }) => {
             .attr("fill", value => colors[value["Fuel type"]]);
         
         // Plot lines
-        const myLine = line().x(d => xScale(xValue(d))).y(d => yScale(yValue(d))).curve(curveNatural)
+        const myLine = line().x(d => xScale(xValue(d))).y(d => yScale(yValue(d)))
         svg.selectAll(".line")
             .data(fuelTypes.map(fuelType => salesFigures.filter(figure => figure["GEO"] === `${province}` && figure["Fuel type"] === `${fuelType}`)))
             .join("path")

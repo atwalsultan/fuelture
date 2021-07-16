@@ -5,7 +5,7 @@ const MarketShareFilter = ({ setYear, yearData, order }) => {
                 Object.keys(yearData).sort((a, b) => {
                     if(order === "ascending") return a - b;
                     else return b - a;
-                }).map(year => <option value={year}>{year}</option>)
+                }).map((year, index) => <option key={index} value={year}>{year}</option>)
             }
         </select>
     )
