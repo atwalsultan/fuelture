@@ -17,16 +17,16 @@ const TeamMember = ({ member }) => {
       </div>
 
       <div className="member-social-profile">
-        <a href={member.Linkedin} target="_blank">
+        <a href={member.Linkedin} target="_blank" rel="noreferrer">
           <FaLinkedin></FaLinkedin>
         </a>
         {member.Github !== "" && (
-          <a href={member.Github} target="_blank">
+          <a href={member.Github} target="_blank" rel="noreferrer">
             <FaGithub></FaGithub>
           </a>
         )}
         {member.Stackoverflow !== "" && (
-          <a href={member.Stackoverflow} target="_blank">
+          <a href={member.Stackoverflow} target="_blank" rel="noreferrer">
             <FaStackOverflow></FaStackOverflow>
           </a>
         )}

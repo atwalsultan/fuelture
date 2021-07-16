@@ -41,15 +41,6 @@ const EvIncentivesViz = () => {
 
     const [incentives, setIncentives] = useState([]);
 
-    const colors = {
-        "Federal": "#bdd237",
-        "British Columbia": "#ddf540",
-        "Quebec": "#8dcef7",
-        "Nova Scotia": "#436275",
-        "Prince Edward Island": "#348cc2",
-        "Ontario": "#afc232"
-    }
-
     useEffect(() => {
         // Initially when the component renders the unmounted variable set to false.
         let unmounted = false;
@@ -94,20 +85,20 @@ const EvIncentivesViz = () => {
         svg.selectAll("g")
             .data(incentives)
             .append("text")
-            .text(incentive => incentive.Max_Incentive)
+            .text(incentive => incentive.Max_Incentive + ' CAD')
             .attr("fill", value => value.TextColor)
             .attr("stroke", value => value.TextColor)
             .attr("dy", ".35em")
             .attr("text-anchor", "middle")
             .attr("font-size", value => {
                 if(value.Max_Incentive === 8000) {
-                    return 50;
+                    return 35;
                 }
                 if(value.Max_Incentive === 5000) {
-                    return 40;
+                    return 25;
                 }
-                if(value.Max_Incentive === 30) {
-                    return 30;
+                if(value.Max_Incentive === 3000) {
+                    return 18;
                 }
             })
 
@@ -121,9 +112,9 @@ const EvIncentivesViz = () => {
 
             <ul>
                 {
-                    incentives.map(incentive => {
+                    incentives.map((incentive, index) => {
                         return (
-                            <li>
+                            <li key={index}>
                                 <span style={{backgroundColor: `${incentive.Color}`}}></span>
                                 <span>{incentive.Province}</span>
                             </li>

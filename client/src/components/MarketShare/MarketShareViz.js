@@ -38,7 +38,7 @@ const MarketShareViz = ({ salesFigures, order }) => {
         
     // Restructure data by year. For each year, add figures about total sales and EV sales (will be used to calculate proportion) 
     let yearData = {};
-    data.map(figure => {
+    data.forEach(figure => {
         if (!yearData.hasOwnProperty(figure.REF_DATE)) {
             if (figure["Fuel type"] === "All fuel types") {
                 yearData[figure.REF_DATE] = {
