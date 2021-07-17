@@ -18,7 +18,7 @@ const Home = () => {
 		
 		const getSalesFigures = async () => {
 
-			// Set the state only when the component is mounted
+			// Fetch and set the state only when the component is mounted
 			if (!unmounted) {
 				const url = "/api/sales";
 				const res = await fetch(url);
