@@ -625,6 +625,87 @@ body {
 						font-weight: 500;
 						color: #bbd237;
 					}
+
+					&>div {
+						padding: 35px 60px;
+						background-color: #ececec;
+
+						span.show-more {
+							display: none;
+						}
+
+						section.css-7659zo-TimelineItemContentWrapper {
+							display: flex;
+							flex-flow: row nowrap;
+							justify-content: center;
+							align-items: center;
+							gap: 8px;
+							padding: 24px;
+							background-color: #142e40;
+							max-width: 600px;
+							border-radius: 4px;
+
+							&>header {
+								display: none;
+							}
+
+							&>div:first-of-type {
+								padding: 0;
+
+								img {
+									width: 100%;
+									height: auto;
+									object-fit: cover;
+								}
+							}
+
+							&>div:last-of-type {
+								margin: 0;
+								padding: 0;
+								max-height: max-content;
+
+								p {
+									color: #ececec;
+								}
+							}
+						}
+
+						.css-pgllyq-TitleWrapper.active {
+							padding: 6px;
+						}
+
+						.css-1kbn8lv-TimelineNavWrapper {
+							background: #091821;
+						}
+
+						.css-13x6k3i-TimelineNavButton {
+							background: #142e40;
+						}
+
+						.css-1b9tpl5-Outline {
+							opacity: 0.2;
+						}
+
+						.css-56srkt-Circle {
+							background: #fff;
+							margin: 0 10px;
+
+							svg {
+								fill: #bbd237;
+								height: 80%;
+								width: auto;
+
+							}
+						}
+
+						.css-56srkt-Circle.active {
+							background: #bbd237;
+
+							svg {
+								fill: #fff
+							}
+						}
+					}
 				}
 
 				&#readEvNews {
