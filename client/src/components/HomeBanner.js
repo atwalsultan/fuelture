@@ -1,4 +1,3 @@
-import Button from "./Button"
 import Illustration from '../static/images/illustration-landing.png'
 
 const HomeBanner = () => {
@@ -7,7 +6,7 @@ const HomeBanner = () => {
             <div>
                 <h2>Everything You Need To Know About Electric Vehicles</h2>
                 <p>Information, recommendation and comparison.</p>
-                <Button text="Get Started"></Button>
+                <a href="#evIntro"><button>Get Started</button></a>
             </div>
 
             <img src={Illustration} alt="Home banner illustration" />
