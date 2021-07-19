@@ -25,7 +25,7 @@ const FindEvViz = () => {
     const [budget, setBudget] = useState(0);
     const [brand, setBrand] = useState([]);
     const [seats, setSeats] = useState(0);
-    const [range, setRange] = useState(1000);
+    const [range, setRange] = useState(10000);
     const [style, setStyle] = useState([]);
     const [cars, setCars] = useState([]);
 
@@ -40,7 +40,7 @@ const FindEvViz = () => {
     const submitHandler = (e) => {
         e.preventDefault();
 
-        let newCars = specs.filter(spec => spec.PriceEuro <= budget && brand.includes(spec.Brand) && parseInt(spec.Seats) >= seats && parseInt(spec.Range) >= range && style.includes(spec.BodyStyle));
+        let newCars = specs.filter(spec => spec.PriceEuro <= budget && brand.includes(spec.Brand) && parseInt(spec.Seats) === seats && parseInt(spec.Range) >= range && style.includes(spec.BodyStyle));
 
         setCars(newCars);
     }
