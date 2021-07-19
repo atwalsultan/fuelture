@@ -1,33 +1,7 @@
-import {useState, useEffect} from 'react';
-const {REACT_APP_EVOX_API_KEY} = process.env;
-
+import {useState} from 'react';
 
 const EvRecommendation = ({ car }) => {
     const [details, setDetails] = useState(false);
-    const [source, setSource] = useState(null);
-
-    useEffect(() => {
-        let unmounted = false;
-
-        const getSource = async () => {
-            if (!unmounted) {
-                if(car.EvoxID !== "") {
-                    const response = await fetch(`https://api.evoximages.com/api/v1/vehicles/${car.EvoxID}/products/27/216/?api_key=${REACT_APP_EVOX_API_KEY}`);
-                    const fetchedData = await response.json();
-                    setSource(fetchedData.urls[0]);
-                }
-                else {
-                    setSource(`https://picsum.photos/150?random=2`);
-                }
-            }
-        };
-
-        getSource();
-
-        return () => {
-            unmounted = true;
-        };
-    }, [])
 
     return (
         <div className="ev-recommendation">
