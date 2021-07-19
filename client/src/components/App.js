@@ -14,13 +14,13 @@ function App() {
 			<ScrollToTop />
 			<Header></Header>
 			
-			<Route path="/" exact component={Home}></Route>
+			{/* <Route path="/" exact component={Home}></Route>
 			<Route path="/news" component={Articles}></Route>
 			<Route path="/tools" component={Tools}></Route>
 			<Route path="/stations" component={Stations}></Route>
-			<Route path="/about" component={About}></Route>
+			<Route path="/about" component={About}></Route> */}
 
-			<Footer></Footer>
+			{/* <Footer></Footer> */}
 		</Router>
 	);
 }
