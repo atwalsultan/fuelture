@@ -37,7 +37,7 @@ const EvRecommendation = ({ car }) => {
             </div>
 
             <div className="ev-image" onClick={() => setDetails(!details)}>
-                <img alt={`${car.Brand} ${car.Model}`} src={source}/>
+                <img alt={`${car.Brand} ${car.Model}`} src={car.Image}/>
             </div>
 
             <div className="ev-price-range">
@@ -54,7 +54,7 @@ const EvRecommendation = ({ car }) => {
             <div className="ev-type-seats-drivetrain" onClick={() => setDetails(!details)}>
                 <div>
                     <p>Type</p>
-                    <p>BEV</p>
+                    <p>{car.Type}</p>
                 </div>
                 <div>
                     <p>Seats</p>
@@ -87,7 +87,7 @@ const EvRecommendation = ({ car }) => {
                 <div>
                     <div>
                         <p>Type</p>
-                        <p>BEV</p>
+                        <p>{car.Type}</p>
                     </div>
 
                     <div>

@@ -17,7 +17,9 @@ const EvTimelineViz = () => {
                 const res = await fetch(url);
                 const data = await res.json();
 
-                setMilestones(data);
+                let toSet = data.sort((a, b) => a.id - b.id);
+
+                setMilestones(toSet);
             }
         };
 
