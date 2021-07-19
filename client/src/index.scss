@@ -630,11 +630,7 @@ body {
 						padding: 35px 60px;
 						background-color: #ececec;
 
-						span.show-more {
-							display: none;
-						}
-
-						section.css-7659zo-TimelineItemContentWrapper {
+						section.timeline-card-content.active {
 							display: flex;
 							flex-flow: row nowrap;
 							justify-content: center;
@@ -644,6 +640,10 @@ body {
 							background-color: #142e40;
 							max-width: 600px;
 							border-radius: 4px;
+
+							span.show-more {
+								display: none;
+							}
 
 							&>header {
 								display: none;
@@ -670,23 +670,25 @@ body {
 							}
 						}
 
-						.css-pgllyq-TitleWrapper.active {
+						.timeline-item-title.active {
 							padding: 6px;
 						}
 
-						.css-1kbn8lv-TimelineNavWrapper {
+						ul.timeline-controls {
 							background: #091821;
+
+							&>li {
+								&>button {
+									background: #142e40;
+								}
+							}
 						}
 
-						.css-13x6k3i-TimelineNavButton {
-							background: #142e40;
-						}
-
-						.css-1b9tpl5-Outline {
+						div.e1gmwefz2 {
 							opacity: 0.2;
 						}
 
-						.css-56srkt-Circle {
+						.timeline-circle.horizontal.e5foh872 {
 							background: #fff;
 							margin: 0 10px;
 
@@ -698,7 +700,7 @@ body {
 							}
 						}
 
-						.css-56srkt-Circle.active {
+						.timeline-circle.horizontal.active.e5foh872 {
 							background: #bbd237;
 
 							svg {
