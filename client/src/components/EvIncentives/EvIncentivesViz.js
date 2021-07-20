@@ -32,7 +32,7 @@ const EvIncentivesViz = () => {
     const myPack = (size) => {
         return pack()
             .size(size)
-            .padding(25)
+            .padding(10)
     }
 
     const makeHeirarchy = (data) => {
@@ -96,14 +96,38 @@ const EvIncentivesViz = () => {
             .attr("dy", ".35em")
             .attr("text-anchor", "middle")
             .attr("font-size", value => {
-                if(value.Max_Incentive === 8000) {
-                    return 35;
+                if(dimensions.width >= 425) {
+                    if(value.Max_Incentive === 8000) {
+                        return 35;
+                    }
+                    if(value.Max_Incentive === 5000) {
+                        return 25;
+                    }
+                    if(value.Max_Incentive === 3000) {
+                        return 18;
+                    }
                 }
-                if(value.Max_Incentive === 5000) {
-                    return 25;
+                else if (dimensions.width <= 425){
+                    if(value.Max_Incentive === 8000) {
+                        return 25;
+                    }
+                    if(value.Max_Incentive === 5000) {
+                        return 18;
+                    }
+                    if(value.Max_Incentive === 3000) {
+                        return 12;
+                    }
                 }
-                if(value.Max_Incentive === 3000) {
-                    return 18;
+                else if (dimensions.width <= 350) {
+                    if(value.Max_Incentive === 8000) {
+                        return 16;
+                    }
+                    if(value.Max_Incentive === 5000) {
+                        return 10;
+                    }
+                    if(value.Max_Incentive === 3000) {
+                        return 8;
+                    }
                 }
             })
 

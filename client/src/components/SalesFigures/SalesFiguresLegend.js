@@ -1,6 +1,6 @@
-const SalesFiguresLegend = () => {
+const SalesFiguresLegend = ({type}) => {
     return (
-        <ul>
+        <ul className={type}>
             <li>
                 <span style={{ backgroundColor: "#bdd237" }}></span>
                 <span>BEV</span>

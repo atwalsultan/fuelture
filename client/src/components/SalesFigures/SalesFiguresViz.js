@@ -135,7 +135,7 @@ const SalesFiguresViz = ({ salesFigures, province, setProvince }) => {
         <div>
             <div className="filters-legend">
                 <SalesFiguresFilters setProvince={setProvince}></SalesFiguresFilters>
-                <SalesFiguresLegend></SalesFiguresLegend>
+                <SalesFiguresLegend type="large-screen-filters"></SalesFiguresLegend>
             </div>
 
             <div ref={wrapperRef} className="viz">
@@ -146,6 +146,8 @@ const SalesFiguresViz = ({ salesFigures, province, setProvince }) => {
                     <text className="y-label"></text>
                 </svg>
             </div>
+
+            <SalesFiguresLegend type="small-screen-filters"></SalesFiguresLegend>
             
         </div>
     );
