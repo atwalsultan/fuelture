@@ -6,8 +6,8 @@ const MarketShare = ({salesFigures}) => {
             <h2>Canadian EV Market Share</h2>
 
             <div>
-                <MarketShareViz salesFigures={salesFigures} order="ascending"></MarketShareViz>
-                <MarketShareViz salesFigures={salesFigures} order="descending"></MarketShareViz>
+                {salesFigures && <MarketShareViz salesFigures={salesFigures} order="ascending"></MarketShareViz>}
+                {salesFigures && <MarketShareViz salesFigures={salesFigures} order="descending"></MarketShareViz>}
             </div>
         </section>
     )
