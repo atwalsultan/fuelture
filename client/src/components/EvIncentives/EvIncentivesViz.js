@@ -80,7 +80,12 @@ const EvIncentivesViz = () => {
             .attr("fill", leaf => leaf.data.Color);
 
         leaf.append("circle")
-            .attr("r", d => d.r)
+            .attr("r", d => {
+                if(isNaN(d.r)) {
+                    return 0;
+                }
+                return d.r;
+            })
 
         svg.selectAll("g")
             .data(incentives)

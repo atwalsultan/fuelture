@@ -37,9 +37,9 @@ const EvTimelineViz = () => {
                 <Chrono items={milestones} mode="HORIZONTAL" theme={{ "primary": "#091821", "secondary": "#bbd237" }}>
                     <div className="chrono-icons">
                         {
-                            milestones.map(milestone => {
+                            milestones.map((milestone, index) => {
                                 return (
-                                    <svg viewBox="0 0 10 16.4">
+                                    <svg viewBox="0 0 10 16.4" key={index}>
                                         <g id="Layer_2" data-name="Layer 2">
                                             <g id="Layer_1-2" data-name="Layer 1">
                                                 <polygon className="cls-1" points="6.4 0 0 8.63 4.01 10.09 3.61 16.4 10 7.73 5.99 6.25 6.4 0" />

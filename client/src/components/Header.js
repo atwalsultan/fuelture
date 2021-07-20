@@ -14,10 +14,10 @@ const Header = () => {
             <div className={`site-header-small-screen${menu ? '' : ' hidden'}`}>
                 <nav>
                     <ul>
-                        <li className={location.pathname === "/news" ? 'active-page' : ''}><Link to="/news">News</Link></li>
-                        <li className={location.pathname === "/tools" ? 'active-page' : ''}><Link to="/tools">Tools</Link></li>
-                        <li className={location.pathname === "/stations" ? 'active-page' : ''}><Link to="/stations">Stations</Link></li>
-                        <li className={location.pathname === "/about" ? 'active-page' : ''}><Link to="/about">About</Link></li>
+                        <li className={location.pathname === "/news" ? 'active-page' : ''} onClick={() => setMenu(false)}><Link to="/news">News</Link></li>
+                        <li className={location.pathname === "/tools" ? 'active-page' : ''} onClick={() => setMenu(false)}><Link to="/tools">Tools</Link></li>
+                        <li className={location.pathname === "/stations" ? 'active-page' : ''} onClick={() => setMenu(false)}><Link to="/stations">Stations</Link></li>
+                        <li className={location.pathname === "/about" ? 'active-page' : ''} onClick={() => setMenu(false)}><Link to="/about">About</Link></li>
                     </ul>
                 </nav>
             </div>
