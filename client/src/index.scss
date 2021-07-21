@@ -90,6 +90,10 @@ body {
 			}
 
 			@media screen and (max-width: 600px) {
+				&>div>a>img {
+					max-width: 175px;
+				}
+
 				padding: 16px 28px;
 			}
 
@@ -143,14 +147,36 @@ body {
 			padding: 56px 142px 0px 142px;
 			gap: 56px;
 
+			@media screen and (max-width: 900px) {
+				padding: 43px 85px 0px 85px;
+			}
+
+			@media screen and (max-width: 600px) {
+				padding: 56px 28px 0px 28px;
+			}
+
 			div {
 				max-width: 500px;
+
+				@media screen and (max-width: 900px) {
+					max-width: 100%;
+					display: flex;
+					flex-flow: column nowrap;
+					align-items: center;
+					width: 100%;
+					text-align: center;
+				}
 
 				h2 {
 					font-size: 40px;
 					font-weight: 500;
 					color: #bdd237;
+					min-width: 350px;
 					max-width: 590px;
+
+					@media screen and (max-width: 900px) {
+						max-width: 100%;
+					}
 				}
 
 				p {
@@ -171,6 +197,10 @@ body {
 					font-family: inherit;
 					transition: all 0.2s ease-in-out;
 
+					@media screen and (max-width: 900px) {
+						margin-top: 42px;
+					}
+
 					&:active {
 						transform: scale(0.8);
 					}
@@ -186,6 +216,30 @@ body {
 				max-height: 100%;
 				max-width: 510px;
 				object-fit: cover;
+
+				@media screen and (max-width: 900px) {
+					max-width: 85%;
+				}
+
+				@media screen and (max-width: 600px) {
+					max-width: 100%;
+				}
+
+				&.banner-illustration-large-screen {
+					display: block;
+
+					@media screen and (max-width: 900px) {
+						display: none;
+					}
+				}
+
+				&.banner-illustration-small-screen {
+					display: none;
+
+					@media screen and (max-width: 900px) {
+						display: block;
+					}
+				}
 			}
 		}
 
@@ -251,11 +305,11 @@ body {
 			flex-grow: 1;
 
 			@media screen and (max-width: 900px) {
-				padding: 56px 85px;
+				padding: 43px 85px;
 			}
 
 			@media screen and (max-width: 600px) {
-				padding: 56px 28px;
+				padding: 43px 28px;
 			}
 
 			ul#articles {
@@ -365,6 +419,10 @@ body {
 						font-weight: 500;
 						text-transform: capitalize;
 						color: #bdd237;
+
+						@media screen and (max-width: 600px) {
+							text-align: left;
+						}
 					}
 
 					p {
@@ -384,11 +442,20 @@ body {
 					margin-top: 56px;
 					text-align: center;
 
+					@media screen and (max-width: 600px) {
+						margin-top: 24px;
+						gap: 16px;
+					}
+
 					h2 {
 						text-transform: capitalize;
 						font-size: 28px;
 						font-weight: 500;
 						color: #bdd237;
+
+						@media screen and (max-width: 600px) {
+							text-align: left;
+						}
 					}
 
 					ul.ev-types {
@@ -396,6 +463,12 @@ body {
 						flex-flow: row nowrap;
 						gap: 20px;
 						width: 100%;
+						max-width: 100%;
+						overflow-x: scroll;
+
+						&::-webkit-scrollbar {
+							display: none;
+						}
 
 						li {
 							flex-grow: 1;
@@ -403,6 +476,7 @@ body {
 							flex-flow: column nowrap;
 							flex-basis: 26%;
 							text-align: left;
+							min-width: 335px;
 
 							img {
 								flex-grow: 1;
@@ -430,23 +504,41 @@ body {
 				&#salesFigures {
 					display: flex;
 					flex-flow: column nowrap;
-					gap: 40px;
+					gap: 56px;
 					margin-top: 88px;
 					text-align: center;
+
+					@media screen and (max-width: 600px) {
+						margin-top: 40px;
+						gap: 16px;
+					}
 
 					h2 {
 						text-transform: capitalize;
 						font-size: 32px;
 						font-weight: 500;
 						color: #bdd237;
+
+						@media screen and (max-width: 600px) {
+							text-align: left;
+						}
 					}
 
 					& > div {
-						padding: 19px 140px 54px 140px;
+						padding: 44px 140px 84px 140px;
 						background-color: #142e40;
 						display: flex;
 						flex-flow: column nowrap;
 						gap: 68px;
+
+						@media screen and (max-width: 1200px) {
+							padding: 44px 44px 44px 44px;
+							gap: 30px;
+						}
+
+						@media screen and (max-width: 900px) {
+							padding: 32px;
+						}
 
 						div.filters-legend {
 							display: flex;
@@ -455,7 +547,12 @@ body {
 							align-items: center;
 							padding: 0 50px;
 
-							ul {
+							@media screen and (max-width: 1100px) {
+								justify-content: center;
+								padding: 0;
+							}
+
+							ul.large-screen-filters {
 								display: flex;
 								flex-flow: row nowrap;
 								justify-content: space-between;
@@ -464,6 +561,10 @@ body {
 								color: #ececec;
 								font-size: 16px;
 								min-width: 0;
+
+								@media screen and (max-width: 1100px) {
+									display: none;
+								}
 
 								li {
 									display: flex;
@@ -482,7 +583,7 @@ body {
 							}
 
 							select {
-								max-width: max-content;
+								max-width: 275px;
 								padding: 16px;
 								background-color: transparent;
 								font-size: 20px;
@@ -502,9 +603,53 @@ body {
 							}
 						}
 
+						ul.small-screen-filters {
+							display: none;
+							flex-flow: row nowrap;
+							justify-content: center;
+							align-items: center;
+							gap: 30px;
+							color: #ececec;
+							font-size: 16px;
+							min-width: 0;
+							margin-top: 48px;
+
+							@media screen and (max-width: 900px) {
+								margin-top: 10px;
+							}
+
+							@media screen and (max-width: 1100px) {
+								display: flex;
+							}
+
+							@media screen and (max-width: 600px) {
+								gap: 0;
+								justify-content: space-between;
+							}
+
+							li {
+								display: flex;
+								flex-flow: row nowrap;
+								justify-content: center;
+								align-items: center;
+								gap: 6px;
+								min-width: 0;
+
+								span:first-of-type {
+									height: 25px;
+									width: 25px;
+									border-radius: 50%;
+								}
+							}
+						}
+
 						div.viz {
-							padding: 0 50px 0 50px;
+							padding: 0 20px 0 50px;
 							max-height: 400px;
+
+							@media screen and (max-width: 900px) {
+								padding: 0 0 0 25px;
+							}
 
 							svg {
 								width: 100%;
@@ -517,6 +662,10 @@ body {
 									font-size: 14px;
 									stroke: rgba(245, 245, 245, 0.4);
 									font-weight: lighter;
+
+									@media screen and (max-width: 900px) {
+										display: none;
+									}
 								}
 							}
 						}
@@ -530,11 +679,20 @@ body {
 					margin-top: 88px;
 					text-align: center;
 
+					@media screen and (max-width: 600px) {
+						margin-top: 40px;
+						gap: 16px;
+					}
+
 					h2 {
 						text-transform: capitalize;
 						font-size: 32px;
 						font-weight: 500;
 						color: #bdd237;
+
+						@media screen and (max-width: 600px) {
+							text-align: left;
+						}
 					}
 
 					& > div {
@@ -542,9 +700,18 @@ body {
 						flex-flow: row nowrap;
 						align-items: center;
 						justify-content: center;
-						gap: 110px;
+						gap: 80px;
 						padding: 44px 40px 40px 40px;
 						background-color: #142e40;
+
+						@media screen and (max-width: 1150px) {
+							gap: 60px;
+						}
+
+						@media screen and (max-width: 1080px) {
+							flex-flow: column nowrap;
+							gap: 50px;
+						}
 
 						& > div {
 							display: flex;
@@ -552,10 +719,18 @@ body {
 							gap: 30px;
 							align-items: center;
 
+							@media screen and (max-width: 1080px) {
+								gap: 16px;
+							}
+
 							svg {
 								height: 300px;
 								width: 325px;
 								overflow: hidden;
+
+								@media screen and (max-width: 410px) {
+									width: 100%;
+								}
 							}
 
 							select {
@@ -600,17 +775,25 @@ body {
 					margin-top: 88px;
 					text-align: center;
 
+					@media screen and (max-width: 600px) {
+						margin-top: 40px;
+						gap: 10px;
+					}
+
 					h2 {
 						text-transform: capitalize;
 						font-size: 32px;
 						font-weight: 500;
 						color: #bdd237;
+
+						@media screen and (max-width: 600px) {
+							text-align: left;
+						}
 					}
 
 					ul {
 						display: flex;
 						flex-flow: row wrap;
-						justify-content: center;
 						align-items: center;
 						gap: 32px;
 						color: #ececec;
@@ -635,7 +818,11 @@ body {
 					}
 
 					& > div {
-						padding: 0 75px 75px 75px;
+						padding: 0 0 60px 0;
+
+						@media screen and (max-width: 600px) {
+							padding: 0 0 40px 0;
+						}
 
 						svg {
 							height: 500px;
@@ -655,6 +842,16 @@ body {
 					max-width: 760px;
 					margin: auto;
 					margin-top: 50px;
+
+					@media screen and (max-width: 900px) {
+						flex-flow: column nowrap;
+						padding: 16px 24px;
+						text-align: center;
+					}
+
+					@media screen and (max-width: 600px) {
+						margin-top: 24px;
+					}
 
 					div {
 						display: flex;
@@ -686,6 +883,10 @@ body {
 
 						transition: all 0.2s ease-in-out;
 
+						@media screen and (max-width: 900px) {
+							margin-top: 30px;
+						}
+
 						&:active {
 							transform: scale(0.8);
 						}
@@ -699,16 +900,33 @@ body {
 					margin-top: 88px;
 					text-align: center;
 
+					@media screen and (max-width: 600px) {
+						margin-top: 40px;
+						gap: 16px;
+					}
+
 					h2 {
 						text-transform: capitalize;
 						font-size: 32px;
 						font-weight: 500;
 						color: #bbd237;
+
+						@media screen and (max-width: 900px) {
+							text-align: left;
+						}
 					}
 
 					&>div {
 						padding: 35px 60px;
 						background-color: #ececec;
+
+						@media screen and (max-width: 900px) {
+							padding: 35px;
+						}
+
+						@media screen and (max-width: 600px) {
+							padding: 16px;
+						}
 
 						section.timeline-card-content.active {
 							display: flex;
@@ -720,6 +938,15 @@ body {
 							background-color: #142e40;
 							max-width: 600px;
 							border-radius: 4px;
+
+							@media screen and (max-width: 525px) {
+								flex-flow: column nowrap;
+
+								img, p {
+									max-width: 200px;
+									text-align: center;
+								}
+							}
 
 							span.show-more {
 								display: none;

@@ -8,7 +8,7 @@ const SalesFiguresFilters = ({setProvince}) => {
                 <option value="Quebec">Quebec</option>
                 <option value="Manitoba">Manitoba</option>
                 <option value="Saskatchewan">Saskatchewan</option>
-                <option value="British Columbia and the Territories">British Columbia & the Territories</option>
+                <option value="British Columbia and the Territories">BC & the Territories</option>
             </select>
         </div>
     )
