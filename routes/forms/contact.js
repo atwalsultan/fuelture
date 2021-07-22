@@ -26,7 +26,21 @@ router.post("/", urlEncodedParser, (req, res) => {
         if (error) {
             console.log(error);
         } else {
-            console.log('Email sent: ' + info.response);
+            console.log('Email sent to Sultan: ' + info.response);
+
+            const mailOptionsUser = {
+                to: req.body.email,
+                subject: `Fuelture | Message Received`,
+                text: `Hi ${req.body.firstName}${req.body.lastName && ' ' + req.body.lastName},\n\nGreetings from Fuelture.\n\nWe wish to inform you that we have received your message and one of our team members will reach out to you as soon as possible. Thank you for writing to us. \n\nRegards,\nTeam Fuelture\n\nPS: This thread is not monitored. Please do not reply to this email. If you have more questions/suggestions, you may submit the contact form again.`
+            };
+        
+            transporter.sendMail(mailOptionsUser, (error, info) => {
+                if (error) {
+                    console.log(error);
+                } else {
+                    console.log(`Email sent to ${req.body.email}: ` + info.response);
+                }
+            });
         }
     });
 

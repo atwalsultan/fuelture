@@ -644,7 +644,7 @@ body {
               }
 
               select {
-                max-width: 275px;
+                width: 250px;
                 padding: 16px;
                 background-color: transparent;
                 font-size: 20px;
@@ -654,7 +654,11 @@ body {
                 border-radius: 4px;
                 outline: none;
                 min-width: 0;
-                // background-image: url(...);   /* Add custom arrow */
+				appearance: none;
+                background-image: url('/static/images/drop-down-icon.svg');   /* Add custom arrow */
+				background-position: top 50% right 16px;
+				background-repeat: no-repeat;
+				background-size: 15px 15px;
 
                 option {
                   background-color: #091821;
@@ -795,7 +799,7 @@ body {
               }
 
               select {
-                max-width: max-content;
+                width: 150px;
                 padding: 16px;
                 background-color: transparent;
                 font-size: 20px;
@@ -804,7 +808,11 @@ body {
                 border: 1px solid #ececec;
                 border-radius: 4px;
                 outline: none;
-                // background-image: url(...);   /* Add custom arrow */
+                appearance: none;
+                background-image: url('/static/images/drop-down-icon.svg');   /* Add custom arrow */
+				background-position: top 50% right 16px;
+				background-repeat: no-repeat;
+				background-size: 15px 15px;
 
                 option {
                   background-color: #091821;
@@ -1221,13 +1229,20 @@ body {
                     border-radius: 4px;
                     outline: none;
                     width: 100%;
-                    // background-image: url(...);   /* Add custom arrow */
 
                     option {
                       background-color: #091821;
                       color: #ececec;
                     }
                   }
+
+				  select {
+					appearance: none;
+					background-image: url('/static/images/drop-down-icon.svg');   /* Add custom arrow */
+					background-position: top 60% right 16px;
+					background-repeat: no-repeat;
+					background-size: 15px 15px;
+				  }
                 }
               }
 
@@ -1567,6 +1582,10 @@ body {
                 border: none;
                 outline: none;
                 transition: 0.2s all ease-in-out;
+
+				@media screen and (max-width: 800px) {
+					margin: auto;
+				}
 
                 &:active {
                   transform: scale(0.8);
