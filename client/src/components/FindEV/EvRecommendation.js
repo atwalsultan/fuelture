@@ -3,6 +3,12 @@ import {useState} from 'react';
 const EvRecommendation = ({ car }) => {
     const [details, setDetails] = useState(false);
 
+    const colors = {
+        "BEV": "#bdd237",
+        "PHEV": "rgb(66, 176, 245)",
+        "HEV": "rgb(110, 117, 66"
+    }
+
     return (
         <div className="ev-recommendation">
             <div className="ev-brand-model" onClick={() => setDetails(!details)}>
@@ -40,7 +46,7 @@ const EvRecommendation = ({ car }) => {
                 </div>
             </div>
 
-            <div className={`ev-additional-info${!details ? ' additional-info-hidden' : ''}`}>
+            <div className={`ev-additional-info${!details ? ' additional-info-hidden' : ''}`} style={{borderTop: `8px solid ${colors[car.Type]}`}}>
                 <div>
                     <div>
                         <p>Price</p>

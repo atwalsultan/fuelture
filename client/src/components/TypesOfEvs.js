@@ -5,17 +5,17 @@ import PHEV from '../static/images/illustration-PHEV.png';
 const TypesOfEvs = () => {
     const types = [
         {
-            title: "Battery EV (BEVs)",
+            title: "Battery EV (BEV)",
             description: "Powered solely by an electric battery, with no gas engine parts. Most BEVs are capable of fast charging and L2 charging.",
             image: BEV
         },
         {
-            title: "Plug-In-Hybrid EV (PHEVs)",
+            title: "Plug-In-Hybrid EV (PHEV)",
             description: "Similar to a Hybrid, but with a larger battery and electric motor. Has a gas tank and a charging port.",
             image: PHEV
         },
         {
-            title: "Hybrid EV (HEVs)",
+            title: "Hybrid EV (HEV)",
             description: "Low-emission vehicles that use an electric motor to assist gas-powered engines. All energy comes from gasoline.",
             image: HEV
         }

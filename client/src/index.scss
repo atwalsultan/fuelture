@@ -35,7 +35,7 @@ body {
 			top: -100%;
 			background-color: #142e40;
 			padding: 32px 85px 53px 85px;
-			z-index: 1000;
+			z-index: 1050;
 			flex-flow: row-reverse nowrap;
 			font-size: 28px;
 			font-weight: 400;
@@ -50,6 +50,7 @@ body {
 				flex-flow: row nowrap;
 				justify-content: center;
 				height: 90%;
+				top: 80px;
 			}
 
 			&.hidden {
@@ -148,11 +149,11 @@ body {
 			gap: 56px;
 
 			@media screen and (max-width: 900px) {
-				padding: 43px 85px 0px 85px;
+				padding: 28px 85px 0px 85px;
 			}
 
 			@media screen and (max-width: 600px) {
-				padding: 56px 28px 0px 28px;
+				padding: 28px 28px 0px 28px;
 			}
 
 			div {
@@ -176,6 +177,10 @@ body {
 
 					@media screen and (max-width: 900px) {
 						max-width: 100%;
+					}
+
+					@media screen and (max-width: 900px) {
+						min-width: initial;
 					}
 				}
 
@@ -253,14 +258,37 @@ body {
 			padding: 56px 142px 0px 142px;
 			gap: 56px;
 
+			@media screen and (max-width: 900px) {
+				padding: 28px 85px 0px 85px;
+			}
+
+			@media screen and (max-width: 600px) {
+				padding: 28px 28px 0px 28px;
+			}
+
 			div {
 				max-width: 500px;
+
+				@media screen and (max-width: 900px) {
+					max-width: 100%;
+					display: flex;
+					flex-flow: column nowrap;
+					align-items: center;
+					width: 100%;
+					text-align: center;
+				}
 
 				h2 {
 					font-size: 40px;
 					font-weight: 500;
 					color: #bdd237;
+					min-width: 350px;
 					max-width: 590px;
+
+					@media screen and (max-width: 900px) {
+						max-width: 100%;
+						min-width: initial;
+					}
 				}
 
 				p {
@@ -281,6 +309,10 @@ body {
 					font-family: inherit;
 					transition: all 0.2s ease-in-out;
 
+					@media screen and (max-width: 900px) {
+						margin-top: 42px;
+					}
+
 					&:active {
 						transform: scale(0.8);
 					}
@@ -296,6 +328,30 @@ body {
 				max-height: 100%;
 				max-width: 510px;
 				object-fit: cover;
+
+				@media screen and (max-width: 900px) {
+					max-width: 85%;
+				}
+
+				@media screen and (max-width: 600px) {
+					max-width: 100%;
+				}
+
+				&.banner-illustration-large-screen {
+					display: block;
+
+					@media screen and (max-width: 900px) {
+						display: none;
+					}
+				}
+
+				&.banner-illustration-small-screen {
+					display: none;
+
+					@media screen and (max-width: 900px) {
+						display: block;
+					}
+				}
 			}
 		}
 
@@ -305,11 +361,11 @@ body {
 			flex-grow: 1;
 
 			@media screen and (max-width: 900px) {
-				padding: 43px 85px;
+				padding: 43px 85px 20px 85px;
 			}
 
 			@media screen and (max-width: 600px) {
-				padding: 43px 28px;
+				padding: 43px 28px 20px 28px;
 			}
 
 			ul#articles {
@@ -532,8 +588,12 @@ body {
 						gap: 68px;
 
 						@media screen and (max-width: 1200px) {
-							padding: 44px 44px 44px 44px;
+							padding: 44px 44px 84px 44px;
 							gap: 30px;
+						}
+
+						@media screen and (max-width: 1100px) {
+							padding: 44px;
 						}
 
 						@media screen and (max-width: 900px) {
@@ -795,10 +855,13 @@ body {
 						display: flex;
 						flex-flow: row wrap;
 						align-items: center;
+						justify-content: center;
 						gap: 32px;
 						color: #ececec;
 						position: relative;
 						top: -48px;
+
+
 
 						li {
 							flex-basis: 15%;
@@ -1060,6 +1123,12 @@ body {
 					padding: 64px 78px;
 					height: 520px;
 
+					@media screen and (max-width: 900px) {
+						margin-top: 40px;
+						margin-bottom: 40px;;
+						gap: 16px;
+					}
+
 					h2 {
 						font-size: 32px;
 						font-weight: 500;
@@ -1074,8 +1143,11 @@ body {
 					flex-flow: column nowrap;
 					gap: 36px;
 					text-align: center;
-					background-color: #142e40;
-					padding: 64px 78px;
+
+					@media screen and (max-width: 900px) {
+						margin-top: 40px;
+						margin-bottom: 40px;
+					}
 
 					h2 {
 						font-size: 32px;
@@ -1084,6 +1156,17 @@ body {
 					}
 
 					& > div {
+						background-color: #142e40;
+						padding:44px;
+
+						@media screen and (max-width: 900px) {
+							padding: 32px;
+						}
+
+						@media screen and (max-width: 900px) {
+							padding: 16px;
+						}
+
 						form {
 							display: flex;
 							flex-flow: column nowrap;
@@ -1094,11 +1177,15 @@ body {
 
 							div:first-of-type {
 								display: flex;
-								flex-flow: row nowrap;
+								flex-flow: row wrap;
 								gap: 40px;
-								justify-content: space-between;
+								justify-content: center;
 								align-items: center;
 								max-width: 100%;
+
+								@media screen and (max-width: 900px) {
+									row-gap: 16px;
+								}
 
 								div {
 									display: flex;
@@ -1106,7 +1193,17 @@ body {
 									gap: 22px;
 									align-items: center;
 									min-width: 0;
-									flex-basis: 20%;
+									flex-basis: 28%;
+
+									@media screen and (max-width: 900px) {
+										gap: 8px;
+										flex-basis: 40%;
+									}
+
+									@media screen and (max-width: 600px) {
+										gap: 8px;
+										flex-basis: 80%;
+									}
 
 									label {
 										color: #ececec;
@@ -1131,9 +1228,6 @@ body {
 											background-color: #091821;
 											color: #ececec;
 										}
-									}
-
-									input {
 									}
 								}
 							}
@@ -1180,12 +1274,19 @@ body {
 									overflow: hidden;
 									max-width: 276.33px;
 
+									@media screen and (max-width: 1200px) {
+										flex-basis: 32%;
+									}
+
+									@media screen and (max-width: 800px) {
+										flex-basis: 50%;
+									}
+
 									div.ev-additional-info {
 										position: absolute;
 										width: 100%;
 										background-color: rgba(9, 24, 33, 0.95);
 										color: #ececec;
-										border-top: 8px solid #bdd237;
 										bottom: 0;
 										display: flex;
 										flex-flow: column nowrap;

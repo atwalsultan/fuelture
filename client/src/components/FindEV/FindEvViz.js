@@ -79,7 +79,7 @@ const FindEvViz = () => {
                         <select name="brand" id="brand" onChange={brandChange} required>
                             <option value="Any">Any</option>
                             {
-                                specs.map(spec => spec.Brand).filter((x, i, a) => a.indexOf(x) === i).map(brand => <option value={brand}>{brand}</option>)
+                                specs.map(spec => spec.Brand).filter((x, i, a) => a.indexOf(x) === i).map((brand, index) => <option key={index} value={brand}>{brand}</option>)
                             }
                         </select>
                     </div>
@@ -99,7 +99,7 @@ const FindEvViz = () => {
                         <select name="style" id="style" onChange={styleChange} required>
                             <option value="Any">Any</option>
                             {
-                                specs.map(spec => spec.BodyStyle).filter((x, i, a) => a.indexOf(x) === i).map(style => <option value={style}>{style}</option>)
+                                specs.map(spec => spec.BodyStyle).filter((x, i, a) => a.indexOf(x) === i).map((style, index) => <option key={index} value={style}>{style}</option>)
                             }
                         </select>
                     </div>
