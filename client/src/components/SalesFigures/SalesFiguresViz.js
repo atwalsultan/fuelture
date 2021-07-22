@@ -1,4 +1,4 @@
-import { scaleLinear, extent, select, line, axisBottom, axisLeft } from "d3";
+import { scaleLinear, extent, select, line, axisBottom, axisLeft, easeLinear } from "d3";
 import { useRef, useEffect, useState } from "react";
 import SalesFiguresFilters from './SalesFiguresFilters';
 import SalesFiguresLegend from "./SalesFiguresLegend";
@@ -91,7 +91,12 @@ const SalesFiguresViz = ({ salesFigures, province, setProvince }) => {
             .attr("cx", value => xScale(xValue(value)))
             .attr("cy", value => yScale(yValue(value)))
             .attr("stroke", value => colors[value["Fuel type"]])
-            .attr("fill", value => colors[value["Fuel type"]]);
+            .attr("fill", value => colors[value["Fuel type"]])
+            .style("opacity", 0)
+            .transition()
+            .delay(500)
+            .duration(500)
+            .style("opacity", 1);
         
         // Plot lines
         const myLine = line().x(d => xScale(xValue(d))).y(d => yScale(yValue(d)))
@@ -99,6 +104,9 @@ const SalesFiguresViz = ({ salesFigures, province, setProvince }) => {
             .data(fuelTypes.map(fuelType => salesFigures.filter(figure => figure["GEO"] === `${province}` && figure["Fuel type"] === `${fuelType}`)))
             .join("path")
             .attr("class", "line")
+            .transition() // Call Transition Method
+            .duration(500) // Set Duration timing (ms)
+            .ease(easeLinear) // Set Easing option
             .attr("d", myLine)
             .attr("fill", "none")
             .attr("stroke", value => value.length > 0 && colors[value[0]["Fuel type"]]);
