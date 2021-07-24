@@ -23,11 +23,11 @@ const EvRecommendation = ({ car }) => {
             <div className="ev-price-range">
                 <div>
                     <p>Price</p>
-                    <p>{car.PriceEuro}</p>
+                    <p>${car.PriceEuro}</p>
                 </div>
                 <div>
                     <p>Range</p>
-                    <p>{car.Range}</p>
+                    <p>{car.Range} km</p>
                 </div>
             </div>
 

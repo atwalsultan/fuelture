@@ -40,7 +40,7 @@ const FindEvViz = () => {
     const submitHandler = (e) => {
         e.preventDefault();
 
-        let newCars = specs.filter(spec => spec.PriceEuro <= budget && brand.includes(spec.Brand) && parseInt(spec.Seats) === seats && parseInt(spec.Range) >= range && style.includes(spec.BodyStyle));
+        let newCars = specs.filter(spec => spec.PriceEuro <= budget && brand.includes(spec.Brand) && parseInt(spec.Seats) >= seats && parseInt(spec.Range) >= range && style.includes(spec.BodyStyle));
 
         setCars(newCars);
     }
@@ -71,7 +71,7 @@ const FindEvViz = () => {
                 <div>
                     <div>    
                         <label htmlFor="budget">Budget</label>
-                        <input type="number" id="budget" min={specs.map(spec => spec.PriceEuro).reduce((a,b)=>Math.min(a,b), Infinity)} onChange={(e) => setBudget(e.target.value)} required/>
+                        <input type="number" id="budget" min={specs.map(spec => spec.PriceEuro).reduce((a,b)=>Math.min(a,b), Infinity)} onChange={(e) => setBudget(e.target.value)} placeholder={specs.map(spec => spec.PriceEuro).reduce((a,b)=>Math.min(a,b), Infinity)} onChange={(e) => setBudget(e.target.value)} required/>
                     </div>
 
                     <div> 
@@ -79,19 +79,19 @@ const FindEvViz = () => {
                         <select name="brand" id="brand" onChange={brandChange} required>
                             <option value="Any">Any</option>
                             {
-                                specs.map(spec => spec.Brand).filter((x, i, a) => a.indexOf(x) === i).map((brand, index) => <option key={index} value={brand}>{brand}</option>)
+                                specs.map(spec => spec.Brand).filter((x, i, a) => a.indexOf(x) === i).sort().map((brand, index) => <option key={index} value={brand}>{brand}</option>)
                             }
                         </select>
                     </div>
 
                     <div>    
-                        <label htmlFor="seats">Seats</label>
-                        <input type="number" id="seats" min={specs.map(spec => spec.Seats).reduce((a,b)=>Math.min(a,b), Infinity)} max={specs.map(spec => spec.Seats).reduce((a,b)=>Math.max(a,b), -Infinity)} onChange={(e) => setSeats(parseInt(e.target.value))} required />
+                        <label htmlFor="seats">Minimum Seats</label>
+                        <input type="number" id="seats" min={specs.map(spec => spec.Seats).reduce((a,b)=>Math.min(a,b), Infinity)} max={specs.map(spec => spec.Seats).reduce((a,b)=>Math.max(a,b), -Infinity)} onChange={(e) => setSeats(parseInt(e.target.value))} placeholder={specs.map(spec => spec.Seats).reduce((a,b)=>Math.min(a,b), Infinity)} max={specs.map(spec => spec.Seats).reduce((a,b)=>Math.max(a,b), -Infinity)} onChange={(e) => setSeats(parseInt(e.target.value))} required />
                     </div>
 
                     <div>    
                         <label htmlFor="range">Range</label>
-                        <input type="number" id="range" min={specs.map(spec => spec.Range).reduce((a,b)=>Math.min(a,b), Infinity)} max={specs.map(spec => spec.Range).reduce((a,b)=>Math.max(a,b), -Infinity)} onChange={(e) => setRange(parseInt(e.target.value))} required />
+                        <input type="number" id="range" min={specs.map(spec => spec.Range).reduce((a,b)=>Math.min(a,b), Infinity)} max={specs.map(spec => spec.Range).reduce((a,b)=>Math.max(a,b), -Infinity)} onChange={(e) => setRange(parseInt(e.target.value))} placeholder={specs.map(spec => spec.Range).reduce((a,b)=>Math.min(a,b), Infinity)} max={specs.map(spec => spec.Range).reduce((a,b)=>Math.max(a,b), -Infinity)} onChange={(e) => setRange(parseInt(e.target.value))} required />
                     </div>
 
                     <div>    
@@ -99,7 +99,7 @@ const FindEvViz = () => {
                         <select name="style" id="style" onChange={styleChange} required>
                             <option value="Any">Any</option>
                             {
-                                specs.map(spec => spec.BodyStyle).filter((x, i, a) => a.indexOf(x) === i).map((style, index) => <option key={index} value={style}>{style}</option>)
+                                specs.map(spec => spec.BodyStyle).filter((x, i, a) => a.indexOf(x) === i).sort().map((style, index) => <option key={index} value={style}>{style}</option>)
                             }
                         </select>
                     </div>
