@@ -84,7 +84,7 @@ const SalesFiguresViz = ({ salesFigures, province, setProvince }) => {
             .nice();
 
         // Plot points
-        svg.selectAll("circle")
+        let points = svg.selectAll("circle")
             .data(salesFigures.filter(figure => figure["GEO"] === `${province}`))
             .join("circle")
             .attr("r", 5)
@@ -92,11 +92,25 @@ const SalesFiguresViz = ({ salesFigures, province, setProvince }) => {
             .attr("cy", value => yScale(yValue(value)))
             .attr("stroke", value => colors[value["Fuel type"]])
             .attr("fill", value => colors[value["Fuel type"]])
-            .style("opacity", 0)
-            .transition()
-            .delay(500)
-            .duration(500)
-            .style("opacity", 1);
+            .style("opacity", 0);
+            
+        points.transition()
+        .delay(500)
+        .duration(500)
+        .style("opacity", 1);
+        
+        points.on("mouseover", (e) => {
+            svg.append("text")
+                .text(e.target.__data__.VALUE)
+                .attr('class', 'tooltip')
+                .style("font-size","16px")
+                .attr("x", e.offsetX)
+                .attr("y", e.offsetY - 10)
+                .attr('fill', 'white');
+        })                  
+        .on("mouseout", () => {
+            svg.selectAll(".tooltip").remove();
+        });
         
         // Plot lines
         const myLine = line().x(d => xScale(xValue(d))).y(d => yScale(yValue(d)))
