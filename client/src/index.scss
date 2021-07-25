@@ -1472,10 +1472,9 @@ body {
 					justify-content: center;
 					align-items: center;
 					gap: 56px;
-					background-color: #142e40;
-					padding: 56px 80px;
-					@media screen and (max-width: 1200px) {
-						padding: 56px 40px;
+
+					@media screen and (max-width: 600px) {
+						gap: 16px;
 					}
 
 					.section-heading {
@@ -1492,8 +1491,13 @@ body {
 						align-items: center;
 						gap: 98px;
 						width: 100%;
+						background-color: #142e40;
+
+						padding: 56px 80px;
+
 						@media screen and (max-width: 1200px) {
 							gap: 40px;
+							padding: 56px 40px;
 						}
 						@media screen and (max-width: 800px) {
 							flex-flow: column nowrap;
