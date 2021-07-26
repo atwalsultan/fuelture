@@ -733,6 +733,23 @@ body {
 									}
 								}
 							}
+
+							.tooltip {
+								position: absolute;
+								padding: 6px;
+								text-align: left;
+
+								p:first-of-type {
+									font-size: 12px;
+									color: #091821;
+									opacity: 0.7;
+								}
+
+								p:last-of-type {
+									font-size: 18;
+									color: #091821;
+								}
+							}
 						}
 					}
 				}

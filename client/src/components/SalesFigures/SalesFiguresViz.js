@@ -52,6 +52,7 @@ const SalesFiguresViz = ({ salesFigures, province, setProvince }) => {
     useEffect(() => {
         // Select SVG for chart
         const svg = select(salesFiguresRef.current);
+        const parent = select(wrapperRef.current);
 
         // Return if dimensions are not accessible
         if (!dimensions) return;
@@ -83,11 +84,38 @@ const SalesFiguresViz = ({ salesFigures, province, setProvince }) => {
             .range([dimensions.height, 0])
             .nice();
 
+        parent.selectAll(".tooltip").remove();
+        
+        let tooltip = parent.append("div")
+            .style("opacity", 0)
+            .attr("class", "tooltip")
+            .style("background-color", "white")
+            .style("border", "solid")
+            .style("border-width", "1px")
+            .style("border-radius", "5px")
+            .style("padding", "10px")
+
+        let mouseOver = (e) => {
+            tooltip.style("opacity", 1)
+        };
+
+        let mouseMove = (e) => {
+            tooltip.html(`<p>TOTAL SALES:</p><p>${e.target.__data__.VALUE}</p>`)
+            .style("left", (e.pageX + 15 + "px"))
+            .style("top", (e.pageY - 15 + "px"))
+        }
+
+        let mouseLeave = (e) => {
+            tooltip.transition()
+            .duration(200)
+            .style("opacity", 0)
+        }
+
         // Plot points
         let points = svg.selectAll("circle")
             .data(salesFigures.filter(figure => figure["GEO"] === `${province}`))
             .join("circle")
-            .attr("r", 5)
+            .attr("r", 6)
             .attr("cx", value => xScale(xValue(value)))
             .attr("cy", value => yScale(yValue(value)))
             .attr("stroke", value => colors[value["Fuel type"]])
@@ -99,18 +127,11 @@ const SalesFiguresViz = ({ salesFigures, province, setProvince }) => {
         .duration(500)
         .style("opacity", 1);
         
-        points.on("mouseover", (e) => {
-            svg.append("text")
-                .text(e.target.__data__.VALUE)
-                .attr('class', 'tooltip')
-                .style("font-size","16px")
-                .attr("x", e.offsetX)
-                .attr("y", e.offsetY - 10)
-                .attr('fill', 'white');
-        })                  
-        .on("mouseout", () => {
-            svg.selectAll(".tooltip").remove();
-        });
+        points.on("mouseover", mouseOver);
+
+        points.on("mousemove", mouseMove);
+
+        points.on("mouseleave", mouseLeave);
         
         // Plot lines
         const myLine = line().x(d => xScale(xValue(d))).y(d => yScale(yValue(d)))
