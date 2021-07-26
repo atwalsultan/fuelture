@@ -42,8 +42,13 @@ const Home = () => {
 			<div className="page-content">
 				<ElectricVehicleIntro />
 				<TypesOfEvs />
-				<SalesFigures salesFigures={salesFigures.filter(figure => (figure["Fuel type"] === "Battery electric" || figure["Fuel type"] === "Hybrid electric" || figure["Fuel type"] === "Plug-in hybrid electric") && figure["Vehicle type"] === "Total, vehicle type")} />
-				<MarketShare salesFigures={salesFigures} />
+
+				<div className="sales-share-projections-container">
+					<SalesFigures salesFigures={salesFigures.filter(figure => (figure["Fuel type"] === "Battery electric" || figure["Fuel type"] === "Hybrid electric" || figure["Fuel type"] === "Plug-in hybrid electric") && figure["Vehicle type"] === "Total, vehicle type")} />
+					<MarketShare salesFigures={salesFigures} />
+				</div>
+					
+				
 				<EvIncentives />
 				<FindAnEv />
 				<EvTimeline />

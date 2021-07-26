@@ -459,6 +459,27 @@ body {
 				}
 			}
 
+			.sales-share-projections-container {
+				background-color: rgba(20, 46, 64, 0.1);
+				padding-top: 44px;
+				margin-top: 88px;
+				max-height: 80vh;
+				overflow-y: scroll;
+
+				&::-webkit-scrollbar {
+					display: none;
+				}
+
+				@media screen and (max-width: 900px) {
+					padding-top: 32px;
+				}
+
+				@media screen and (max-width: 600px) {
+					margin-top: 40px;
+				}
+
+			}
+
 			section {
 				.section-heading {
 					color: #c2d055;
@@ -562,11 +583,11 @@ body {
 					display: flex;
 					flex-flow: column nowrap;
 					gap: 56px;
-					margin-top: 88px;
+					// margin-top: 88px;
 					text-align: center;
 
 					@media screen and (max-width: 600px) {
-						margin-top: 40px;
+						// margin-top: 40px;
 						gap: 16px;
 					}
 
@@ -575,15 +596,11 @@ body {
 						font-size: 32px;
 						font-weight: 500;
 						color: #bdd237;
-
-						@media screen and (max-width: 600px) {
-							text-align: left;
-						}
 					}
 
 					& > div {
 						padding: 44px 140px 84px 140px;
-						background-color: #142e40;
+						// background-color: #142e40;
 						display: flex;
 						flex-flow: column nowrap;
 						gap: 68px;
@@ -771,10 +788,6 @@ body {
 						font-size: 32px;
 						font-weight: 500;
 						color: #bdd237;
-
-						@media screen and (max-width: 600px) {
-							text-align: left;
-						}
 					}
 
 					& > div {
@@ -784,7 +797,7 @@ body {
 						justify-content: center;
 						gap: 80px;
 						padding: 44px 40px 40px 40px;
-						background-color: #142e40;
+						// background-color: #142e40;
 
 						@media screen and (max-width: 1150px) {
 							gap: 60px;
