@@ -98,35 +98,35 @@ const EvIncentivesViz = () => {
             .attr("font-size", value => {
                 if(dimensions.width >= 425) {
                     if(value.Max_Incentive === 8000) {
+                        return 45;
+                    }
+                    if(value.Max_Incentive === 5000) {
+                        return 35;
+                    }
+                    if(value.Max_Incentive === 3000) {
+                        return 25;
+                    }
+                }
+                else if (dimensions.width <= 425){
+                    if(value.Max_Incentive === 8000) {
                         return 35;
                     }
                     if(value.Max_Incentive === 5000) {
                         return 25;
                     }
                     if(value.Max_Incentive === 3000) {
-                        return 18;
-                    }
-                }
-                else if (dimensions.width <= 425){
-                    if(value.Max_Incentive === 8000) {
-                        return 25;
-                    }
-                    if(value.Max_Incentive === 5000) {
-                        return 18;
-                    }
-                    if(value.Max_Incentive === 3000) {
-                        return 12;
+                        return 15;
                     }
                 }
                 else if (dimensions.width <= 350) {
                     if(value.Max_Incentive === 8000) {
-                        return 16;
+                        return 25;
                     }
                     if(value.Max_Incentive === 5000) {
-                        return 10;
+                        return 15;
                     }
                     if(value.Max_Incentive === 3000) {
-                        return 8;
+                        return 10;
                     }
                 }
             })
