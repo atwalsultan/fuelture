@@ -869,6 +869,126 @@ body {
 					}
 				}
 
+				&#evFuture {
+					display: flex;
+					flex-flow: column nowrap;
+					gap: 16px;
+					margin-top: 88px;
+					text-align: center;
+
+					@media screen and (max-width: 600px) {
+						margin-top: 40px;
+						gap: 16px;
+					}
+
+					h2 {
+						text-transform: capitalize;
+						font-size: 32px;
+						font-weight: 500;
+						color: #bdd237;
+					}
+
+					&>div {
+						color: #ececec;
+						text-align: left;
+						display: grid;
+						row-gap: 4px;
+						column-gap: 98px;
+						grid-template-columns: repeat(2, 1fr);
+						padding: 44px 40px 40px 40px;
+						font-size: 22px;
+
+						&>div:first-of-type {
+							display: flex;
+							flex-flow: column nowrap;
+							// justify-content: center;
+
+							p:first-of-type {
+								font-size: 175px;
+								font-weight: 300;
+								color: #bbd237;
+								text-align: right;
+								flex-grow: 1;
+							}
+
+							p:last-of-type {
+								display: flex;
+								flex-flow: row nowrap;
+								width: 100%;
+								justify-content: flex-end;
+								align-items: center;
+
+								span:first-of-type {
+									font-size: 18px;
+								}
+
+								span:last-of-type {
+									font-size: 24px;
+									color: #bbd237;
+								}
+							} 
+						}
+
+						&>div:nth-of-type(2) {
+							display: flex;
+							flex-flow: column nowrap;
+							justify-content: center;
+							align-items: center;
+
+							p:first-of-type {
+								flex-grow: 1;
+								display: flex;
+								flex-flow: row nowrap;
+								align-items: center;
+								justify-content: center;
+							}
+
+							p:last-of-type {
+								display: flex;
+								flex-flow: row nowrap;
+								width: 100%;
+								// justify-content: flex-end;
+								align-items: center;
+
+								span:first-of-type {
+									font-size: 18px;
+								}
+
+								span:last-of-type {
+									font-size: 24px;
+									color: #bbd237;
+								}	
+							}
+						}
+
+						&>div:nth-of-type(3) {
+							p {
+								display: flex;
+								flex-flow: row nowrap;
+								justify-content: center;
+								align-items: center;
+								height: 100%;
+								padding-top:28px;
+							}
+						}
+
+						div:last-of-type {
+							p:first-of-type {
+								font-size: 175px;
+								font-weight: 300;
+								color: #bbd237;
+								text-align: right;
+								flex-grow: 1;
+							}
+
+							// p:last-of-type {
+							// 	font-size: 14px;
+							// 	font-style: italic;
+							// }
+						}
+					}
+				}
+
 				&#evIncentives {
 					display: flex;
 					flex-flow: column nowrap;

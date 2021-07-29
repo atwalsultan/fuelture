@@ -8,6 +8,7 @@ import EvTimeline from "./EvTimeline/EvTimeline";
 import ReadEvNews from "./ReadEvNews";
 import FindAnEv from "./FindAnEv";
 import SalesFigures from "./SalesFigures/SalesFigures";
+import EVFuture from './EVFuture';
 
 const Home = () => {
 	const [salesFigures, setSalesFigures] = useState([]);
@@ -46,6 +47,7 @@ const Home = () => {
 				<div className="sales-share-projections-container">
 					<SalesFigures salesFigures={salesFigures.filter(figure => (figure["Fuel type"] === "Battery electric" || figure["Fuel type"] === "Hybrid electric" || figure["Fuel type"] === "Plug-in hybrid electric") && figure["Vehicle type"] === "Total, vehicle type")} />
 					<MarketShare salesFigures={salesFigures} />
+					<EVFuture />
 				</div>
 					
 				
