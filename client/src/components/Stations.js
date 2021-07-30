@@ -2,6 +2,8 @@ import {useState, useEffect} from 'react';
 import { Icon } from 'leaflet';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 
+const {REACT_APP_STADIA_API_KEY} = process.env;
+
 const Stations = () => {
 
     // State for stations
@@ -42,9 +44,7 @@ const Stations = () => {
             <MapContainer center={[49.2248, -123.1085]} zoom={12} scrollWheelZoom={true} style={{ height: "80vh" }}>
                 <TileLayer
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                    // url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
-                    // url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png"
+                    url={`https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png?api_key=${REACT_APP_STADIA_API_KEY}`}
                 />
 
                 {
