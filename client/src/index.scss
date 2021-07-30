@@ -898,17 +898,36 @@ body {
 						padding: 44px 40px 40px 40px;
 						font-size: 22px;
 
+						@media screen and (max-width: 1300px) {
+							column-gap: 48px;
+						}
+
+						div {
+							min-width: 0;
+						}
+
 						&>div:first-of-type {
 							display: flex;
 							flex-flow: column nowrap;
 							// justify-content: center;
 
 							p:first-of-type {
-								font-size: 175px;
+								font-size: 150px;
 								font-weight: 300;
 								color: #bbd237;
-								text-align: right;
 								flex-grow: 1;
+								display: flex;
+								flex-flow: row nowrap;
+								align-items: center;
+								justify-content: flex-end;
+
+								@media screen and (max-width: 1150px) {
+									font-size: 125px;
+								}
+
+								@media screen and (max-width: 1000px) {
+									font-size: 100px;
+								}
 							}
 
 							p:last-of-type {
@@ -974,11 +993,22 @@ body {
 
 						div:last-of-type {
 							p:first-of-type {
-								font-size: 175px;
+								font-size: 150px;
 								font-weight: 300;
 								color: #bbd237;
-								text-align: right;
 								flex-grow: 1;
+								display: flex;
+								flex-flow: row nowrap;
+								align-items: center;
+								height: 100%;
+
+								@media screen and (max-width: 1150px) {
+									font-size: 125px;
+								}
+
+								@media screen and (max-width: 1000px) {
+									font-size: 100px;
+								}
 							}
 
 							// p:last-of-type {
@@ -1283,8 +1313,7 @@ body {
 					gap: 36px;
 					text-align: center;
 					background-color: #142e40;
-					padding: 64px 78px;
-					height: 520px;
+					padding-top: 64px;
 
 					@media screen and (max-width: 900px) {
 						margin-top: 40px;
@@ -1296,6 +1325,24 @@ body {
 						font-size: 32px;
 						font-weight: 500;
 						color: #bbd237;
+					}
+
+					&>div {
+						img {
+							&#comparisonDesktop {
+								@media screen and (max-width: 900px) {
+									display: none;
+								}
+							}
+
+							&#comparisonMobile {
+								display: none;
+
+								@media screen and (max-width: 900px) {
+									display: block;
+								}
+							}
+						}
 					}
 				}
 
