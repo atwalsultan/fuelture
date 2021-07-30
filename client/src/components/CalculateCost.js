@@ -1,5 +1,5 @@
-import comparisonDesktop from '../static/images/comparison-desktop.jpg';
-import comparisonMobile from '../static/images/comparison-mobile.jpg';
+import comparisonDesktop from '../static/images/comparison-desktop.png';
+import comparisonMobile from '../static/images/comparison-mobile.png';
 
 const CalculateCost = () => {
     return (
