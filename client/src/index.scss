@@ -902,6 +902,18 @@ body {
 							column-gap: 48px;
 						}
 
+						@media screen and (max-width: 1000px) {
+							display: flex;
+							flex-flow: column nowrap;
+							align-items: center;
+							gap: 16px;
+							padding: 44px 98px;
+						}
+
+						@media screen and (max-width: 600px) {
+							padding: 44px;
+						}
+
 						div {
 							min-width: 0;
 						}
@@ -910,6 +922,10 @@ body {
 							display: flex;
 							flex-flow: column nowrap;
 							// justify-content: center;
+
+							@media screen and (max-width: 1000px) {
+								order: 1;
+							}
 
 							p:first-of-type {
 								font-size: 150px;
@@ -925,9 +941,7 @@ body {
 									font-size: 125px;
 								}
 
-								@media screen and (max-width: 1000px) {
-									font-size: 100px;
-								}
+
 							}
 
 							p:last-of-type {
@@ -953,6 +967,10 @@ body {
 							flex-flow: column nowrap;
 							justify-content: center;
 							align-items: center;
+
+							@media screen and (max-width: 1000px) {
+								order: 4;
+							}
 
 							p:first-of-type {
 								flex-grow: 1;
@@ -981,6 +999,10 @@ body {
 						}
 
 						&>div:nth-of-type(3) {
+							@media screen and (max-width: 1000px) {
+								order: 2;
+							}
+
 							p {
 								display: flex;
 								flex-flow: row nowrap;
@@ -992,6 +1014,11 @@ body {
 						}
 
 						div:last-of-type {
+							@media screen and (max-width: 1000px) {
+								margin-top: 16px;
+								order: 3;
+							}
+
 							p:first-of-type {
 								font-size: 150px;
 								font-weight: 300;
@@ -1005,16 +1032,7 @@ body {
 								@media screen and (max-width: 1150px) {
 									font-size: 125px;
 								}
-
-								@media screen and (max-width: 1000px) {
-									font-size: 100px;
-								}
 							}
-
-							// p:last-of-type {
-							// 	font-size: 14px;
-							// 	font-style: italic;
-							// }
 						}
 					}
 				}
