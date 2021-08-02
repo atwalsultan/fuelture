@@ -9,7 +9,7 @@ const ToolsBanner1 = () => {
                 <h2>Know the money you paid and the emissions your car produced</h2>
                 <p>Based on the data entered, we will help you calculate annual fuel cost and emission.</p>
                 <img src={Illustration} alt="Comparison tool illustration" className="banner-illustration-small-screen" />
-                <a href=""><button>Let's Figure It Out</button></a>
+                <a href="#calculateCost"><button>Let's Figure It Out</button></a>
             </div>
         </div>
     )

@@ -1,8 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
+// Import model
 const Milestone = require("../../models/Milestone");
 
+// Fetch and respond with documents/error
 router.get("/", (req, res) => {
 	Milestone.find()
 		.then((milestone) => {

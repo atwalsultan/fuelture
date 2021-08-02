@@ -40,7 +40,7 @@ const FindEvViz = () => {
     const submitHandler = (e) => {
         e.preventDefault();
 
-        let newCars = specs.filter(spec => spec.PriceEuro <= budget && brand.includes(spec.Brand) && parseInt(spec.Seats) >= seats && parseInt(spec.Range) >= range && style.includes(spec.BodyStyle));
+        let newCars = specs.filter(spec => spec.Price <= budget && brand.includes(spec.Brand) && parseInt(spec.Seats) >= seats && parseInt(spec.Range) >= range && style.includes(spec.BodyStyle));
 
         setCars(newCars);
     }
@@ -70,8 +70,8 @@ const FindEvViz = () => {
             <form onSubmit={submitHandler}>
                 <div>
                     <div>    
-                        <label htmlFor="budget">Budget</label>
-                        <input type="number" id="budget" min={specs.map(spec => spec.PriceEuro).reduce((a,b)=>Math.min(a,b), Infinity)} onChange={(e) => setBudget(e.target.value)} placeholder={`${specs.map(spec => spec.PriceEuro).reduce((a,b)=>Math.min(a,b), Infinity)} - ${specs.map(spec => spec.PriceEuro).reduce((a,b)=>Math.max(a,b), -Infinity)}`} onChange={(e) => setBudget(e.target.value)} required/>
+                        <label htmlFor="budget">Maximum Budget</label>
+                        <input type="number" id="budget" min={specs.map(spec => spec.Price).reduce((a,b)=>Math.min(a,b), Infinity)} onChange={(e) => setBudget(e.target.value)} placeholder={`${specs.map(spec => spec.Price).reduce((a,b)=>Math.min(a,b), Infinity)} - ${specs.map(spec => spec.Price).reduce((a,b)=>Math.max(a,b), -Infinity)}`} onChange={(e) => setBudget(e.target.value)} required/>
                     </div>
 
                     <div> 
@@ -90,7 +90,7 @@ const FindEvViz = () => {
                     </div>
 
                     <div>    
-                        <label htmlFor="range">Range</label>
+                        <label htmlFor="range">Minimum Range</label>
                         <input type="number" id="range" min={specs.map(spec => spec.Range).reduce((a,b)=>Math.min(a,b), Infinity)} max={specs.map(spec => spec.Range).reduce((a,b)=>Math.max(a,b), -Infinity)} onChange={(e) => setRange(parseInt(e.target.value))} placeholder={`${specs.map(spec => spec.Range).reduce((a,b)=>Math.min(a,b), Infinity)} - ${specs.map(spec => spec.Range).reduce((a,b)=>Math.max(a,b), -Infinity)}`} max={specs.map(spec => spec.Range).reduce((a,b)=>Math.max(a,b), -Infinity)} onChange={(e) => setRange(parseInt(e.target.value))} required />
                     </div>
 

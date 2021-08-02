@@ -23,7 +23,7 @@ const EvRecommendation = ({ car }) => {
             <div className="ev-price-range">
                 <div>
                     <p>Price</p>
-                    <p>${car.PriceEuro}</p>
+                    <p>${car.Price}</p>
                 </div>
                 <div>
                     <p>Range</p>
@@ -50,7 +50,7 @@ const EvRecommendation = ({ car }) => {
                 <div>
                     <div>
                         <p>Price</p>
-                        <p>{car.PriceEuro}</p>
+                        <p>{car.Price}</p>
                     </div>
 
                     <div>
@@ -60,7 +60,7 @@ const EvRecommendation = ({ car }) => {
 
                     <div>
                         <p>Efficiency</p>
-                        <p>{car.Efficiency}</p>
+                        <p>{car.Efficiency ? car.Efficiency : '- -'}</p>
                     </div>
                 </div>
 
@@ -72,12 +72,12 @@ const EvRecommendation = ({ car }) => {
 
                     <div>
                         <p>Plug</p>
-                        <p>{car.PlugType}</p>
+                        <p>{car.PlugType ? car.PlugType : '- -'}</p>
                     </div>
 
                     <div>
                         <p>Battery</p>
-                        <p>NA</p>
+                        <p>- -</p>
                     </div>
                 </div>
 
@@ -101,7 +101,7 @@ const EvRecommendation = ({ car }) => {
                 <div>
                     <div>
                         <p>Segment</p>
-                        <p>{car.Segment}</p>
+                        <p>{car.Segment ? car.Segment : '- -'}</p>
                     </div>
 
                     <div>
