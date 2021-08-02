@@ -2,19 +2,21 @@ const express = require('express')
 const router = express.Router()
 
 router.get('/', (req, res) => {
-
+    // Fetch articles
     const fetchArticles = async () => {
         const Parser = require('rss-parser')
         const parser = new Parser()
 
         let items = []
-        let autoEvolutionImages = [];
+        let autoEvolutionImages = []; // For autoevolution image urls
 
+
+        // Fetch
         const autoblogRaw = await parser.parseURL('https://www.autoblog.com/category/green-auto-news/rss.xml')
         const autoevolutionRaw = await parser.parseURL('https://www.autoevolution.com/rss/backend-green.xml')
         const insideevsRaw = await parser.parseURL('https://insideevs.com/rss/articles/all/')
 
-        // For images from autoevolution
+        // For autoevolution image urls
         const fetch = require('node-fetch');
         let response = await fetch('https://www.autoevolution.com/rss/backend-green.xml');
         let textString = await response.text();
