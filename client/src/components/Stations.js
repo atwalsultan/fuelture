@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 import { Icon } from 'leaflet';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 
 const {REACT_APP_STADIA_API_KEY} = process.env;
 

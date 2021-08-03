@@ -5,7 +5,7 @@ const EvRecommendations = ({ cars }) => {
         <div>
             <ul>
                 {
-                    cars.map(car => <li><EvRecommendation car={car} /></li>)
+                    cars.map((car, index) => <li key={index}><EvRecommendation car={car} /></li>)
                 }
             </ul>
         </div>
