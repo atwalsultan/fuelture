@@ -4,7 +4,7 @@ import comparisonMobile from '../static/images/comparison-mobile.png';
 const CalculateCost = () => {
     return (
         <section id="calculateCost">
-            <h2>Calculate your cost and emission</h2>
+            <h2>Compare fuel costs & emissions</h2>
             <div>
                 <img src={comparisonDesktop} alt="Comparison of EVs with a gas car" id="comparisonDesktop"/>
                 <img src={comparisonMobile} alt="Comparison of EVs with a gas car" id="comparisonMobile" />
