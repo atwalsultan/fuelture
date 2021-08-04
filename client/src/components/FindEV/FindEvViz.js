@@ -70,7 +70,7 @@ const FindEvViz = () => {
             <form onSubmit={submitHandler}>
                 <div>
                     <div>    
-                        <label htmlFor="budget">Maximum Budget</label>
+                        <label htmlFor="budget">Budget</label>
                         <input type="number" id="budget" min={specs.map(spec => spec.Price).reduce((a,b)=>Math.min(a,b), Infinity)} placeholder={`${specs.map(spec => spec.Price).reduce((a,b)=>Math.min(a,b), Infinity)} - ${specs.map(spec => spec.Price).reduce((a,b)=>Math.max(a,b), -Infinity)}`} onChange={(e) => setBudget(e.target.value)} required/>
                     </div>
 

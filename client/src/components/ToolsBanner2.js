@@ -7,7 +7,7 @@ const ToolsBanner2 = () => {
 
             <div>
                 <h2>Considering an EV? Try our recommendation tool</h2>
-                <p>Tell us your preferences, we will give you recommendations.</p>
+                <p>Tell us your preferences, we'll give you recommendations.</p>
                 <img src={Illustration} alt="Recommendation tool illustration" className="banner-illustration-small-screen"/>
                 <a href="#findEv"><button>Find Me An EV</button></a>
             </div>

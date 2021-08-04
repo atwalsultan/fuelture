@@ -286,6 +286,7 @@ body {
 					color: #bdd237;
 					min-width: 350px;
 					max-width: 590px;
+					text-transform: capitalize;
 
 					@media screen and (max-width: 900px) {
 						max-width: 100%;
@@ -1328,7 +1329,7 @@ body {
 					margin-bottom: 120px;
 					display: flex;
 					flex-flow: column nowrap;
-					gap: 36px;
+					gap: 5px;
 					text-align: center;
 					background-color: #142e40;
 					padding-top: 64px;
@@ -1336,13 +1337,13 @@ body {
 					@media screen and (max-width: 900px) {
 						margin-top: 40px;
 						margin-bottom: 40px;
-						gap: 16px;
 					}
 
 					h2 {
 						font-size: 32px;
 						font-weight: 500;
 						color: #bbd237;
+						text-transform: capitalize;
 					}
 
 					&>div {
@@ -1371,30 +1372,27 @@ body {
 					flex-flow: column nowrap;
 					gap: 36px;
 					text-align: center;
+					background-color: #142e40;
+					padding: 44px;
+
+					@media screen and (max-width: 900px) {
+						padding: 16px;
+					}
 
 					@media screen and (max-width: 900px) {
 						margin-top: 40px;
 						margin-bottom: 40px;
+						padding: 32px;
 					}
 
 					h2 {
 						font-size: 32px;
 						font-weight: 500;
 						color: #bbd237;
+						text-transform: capitalize;
 					}
 
 					& > div {
-						background-color: #142e40;
-						padding: 44px;
-
-						@media screen and (max-width: 900px) {
-							padding: 32px;
-						}
-
-						@media screen and (max-width: 900px) {
-							padding: 16px;
-						}
-
 						form {
 							display: flex;
 							flex-flow: column nowrap;
@@ -1517,6 +1515,7 @@ body {
 								flex-flow: row wrap;
 								justify-content: center;
 								gap: 40px;
+								margin-bottom: 100px;
 
 								li {
 									flex-basis: 25%;
@@ -1681,6 +1680,33 @@ body {
 									}
 								}
 							}
+
+							footer.recommendations-footer {
+								display: flex;
+								flex-flow: row nowrap;
+								gap: 24px;
+								justify-content: center;
+								align-items: center;
+
+								@media screen and (max-width: 600px) {
+									flex-flow: column nowrap;
+								}
+
+								p {
+									font-size: 18px;
+									color: #bbd237;
+								}
+
+								&>div {
+									padding: 8px 20px;
+									background-color: #fff;
+
+									img {
+										max-width: 175px;
+										height: auto;
+									}
+								}
+							}
 						}
 					}
 				}
@@ -1692,7 +1718,9 @@ body {
 					flex-flow: column nowrap;
 					justify-content: center;
 					align-items: center;
-					gap: 56px;
+					gap: 36px;
+					background-color: #142e40;
+					padding-top: 56px;
 
 					@media screen and (max-width: 600px) {
 						gap: 16px;
@@ -1857,7 +1885,7 @@ body {
 					.team-intro {
 						font-size: 28px;
 						font-weight: 400;
-						max-width: 596px;
+						max-width: 650px;
 						margin: auto;
 						margin-bottom: 89px;
 					}
