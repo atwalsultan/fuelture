@@ -1,7 +1,8 @@
 const SalesFiguresFilters = ({setProvince}) => {
     return (
         <div>
-            <select onChange={e => setProvince(e.target.value)}>
+            <label htmlFor="salesRegion">Region: </label>
+            <select onChange={e => setProvince(e.target.value)} id="salesRegion">
                 <option value="Canada">Canada</option>
                 <option value="Prince Edward Island">Prince Edward Island</option>
                 <option value="New Brunswick">New Brunswick</option>
