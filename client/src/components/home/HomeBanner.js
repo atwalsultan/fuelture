@@ -1,4 +1,4 @@
-import Illustration from '../static/images/illustration-landing.png'
+import Illustration from '../../static/images/illustration-landing.png'
 
 const HomeBanner = () => {
     return (

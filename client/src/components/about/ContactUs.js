@@ -1,4 +1,4 @@
-import Illustration from '../static/images/illustration-contact.png';
+import Illustration from '../../static/images/illustration-contact.png';
 
 const ContactUs = () => {
     return (

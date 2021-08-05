@@ -1,6 +1,6 @@
-import BEV from '../static/images/illustration-BEV.png';
-import HEV from '../static/images/illustration-HEV.png';
-import PHEV from '../static/images/illustration-PHEV.png';
+import BEV from '../../static/images/illustration-BEV.png';
+import HEV from '../../static/images/illustration-HEV.png';
+import PHEV from '../../static/images/illustration-PHEV.png';
 
 const TypesOfEvs = () => {
     const types = [

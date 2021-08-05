@@ -1,4 +1,4 @@
-import Illustration from '../static/images/illustration-calculate.png';
+import Illustration from '../../static/images/illustration-calculate.png';
 
 const ToolsBanner1 = () => {
     return (

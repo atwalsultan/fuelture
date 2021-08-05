@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import ScrollToTop from "./ScrollToTop";
-import Home from "./Home";
-import Articles from "./Articles";
-import Tools from "./Tools";
-import About from "./About";
-import Stations from "./Stations";
+import Home from "./home/Home";
+import Articles from "./news/Articles";
+import Tools from "./tools/Tools";
+import About from "./about/About";
+import Stations from "./stations/Stations";
 import Header from "./Header";
 import Footer from "./Footer";
 

@@ -2,8 +2,8 @@ import { select } from 'd3';
 import { useRef, useEffect, useState } from 'react';
 import MarketShareFilter from './MarketShareFilter';
 import MarketShareLegend from './MarketShareLegend';
-import Car from '../../static/images/car-icon.svg';
-import CarWhite from '../../static/images/car-icon-white.svg';
+import Car from '../../../static/images/car-icon.svg';
+import CarWhite from '../../../static/images/car-icon-white.svg';
 
 // Custom hook for responsive chart
 const useResizeObserver = (ref) => {
