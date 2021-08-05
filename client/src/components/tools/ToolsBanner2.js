@@ -1,4 +1,4 @@
-import Illustration from '../static/images/illustration-recommend.png';
+import Illustration from '../../static/images/illustration-recommend.png';
 
 const ToolsBanner2 = () => {
     return (

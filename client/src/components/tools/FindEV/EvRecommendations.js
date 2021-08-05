@@ -1,5 +1,5 @@
 import EvRecommendation from "./EvRecommendation"
-import evoxLogo from '../../static/images/evox-logo.jpeg'
+import evoxLogo from '../../../static/images/evox-logo.jpeg'
 
 const EvRecommendations = ({ cars }) => {
     return (
