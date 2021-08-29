@@ -1,4 +1,6 @@
 import {useState} from 'react';
+import BEV from '../../../static/images/illustration-BEV.png';
+import PHEV from '../../../static/images/illustration-PHEV.png';
 
 const EvRecommendation = ({ car }) => {
     const [details, setDetails] = useState(false);
@@ -17,7 +19,7 @@ const EvRecommendation = ({ car }) => {
             </div>
 
             <div className="ev-image" onClick={() => setDetails(!details)}>
-                <img alt={`${car.Brand} ${car.Model}`} src={car.Image}/>
+                <img alt={`${car.Brand} ${car.Model}`} src={car.Type === "BEV" ? BEV : PHEV}/>
             </div>
 
             <div className="ev-price-range">
