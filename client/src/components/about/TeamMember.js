@@ -4,11 +4,11 @@ const TeamMember = ({ member }) => {
   return (
     <div className="team-member">
       <div>
-        <img
+        <div
           src={member.avatarUrl}
           alt={member.Name}
           className="team-member-image"
-        />
+        ></div>
       </div>
 
       <div className="member-name-role">
