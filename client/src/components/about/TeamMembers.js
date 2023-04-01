@@ -51,8 +51,9 @@ const TeamMembers = () => {
       <h2 className="section-heading">Meet The Team</h2>
 
       <p className="team-intro">
-        We are Web & Mobile Apps Design & Development students from Langara
-        College, and we finished this project within 13 weeks.
+        Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor
+        sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem
+        ipsum dolor sit amet lorem ipsum dolor sit amet
       </p>
 
       <div>
